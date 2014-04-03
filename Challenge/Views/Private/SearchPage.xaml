@@ -1,0 +1,78 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="ChallengeApp.Views.Private.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:utils="clr-namespace:ChallengeApp.Utils"
+    xmlns:Primitives="clr-namespace:Microsoft.Phone.Controls.Primitives;assembly=Microsoft.Phone"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="Black"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource AppMainColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource AppBackgroundColor}">
+
+    <phone:PhoneApplicationPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Padding">
+                <Setter.Value>10</Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Primitives:PivotHeadersControl">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Primitives:PivotHeadersControl">
+                        <Grid Background="{StaticResource AppMainBrush}">
+                            <Canvas x:Name="Canvas">
+                                <ItemsPresenter/>
+                            </Canvas>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+
+
+    <Grid x:Name="LayoutRoot" Margin="0,-1" Background="{StaticResource AppBackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="{StaticResource AppBarForegroundBrush}">
+            <StackPanel Grid.Row="0" Margin="12,17,0,0">
+                <TextBlock Text="{Binding LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle3Style}" FontWeight="Bold" Foreground="{StaticResource AppBackgroundBrush}"/>
+                <toolkit:PhoneTextBox x:Name="textBoxQuery" Hint="{Binding LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Normal" KeyDown="textBoxQuery_KeyDown" />
+            </StackPanel>
+        </Grid>
+
+        <phone:Pivot Grid.Row="1" Foreground="{StaticResource AppBackgroundBrush}" Title="" Margin="0,-12,0,0">
+            <phone:Pivot.TitleTemplate>
+                <DataTemplate/>
+            </phone:Pivot.TitleTemplate>
+
+            <phone:Pivot.HeaderTemplate>
+                <DataTemplate/>
+                    <!--<TextBlock Text="{Binding Converter={StaticResource LowerCaseConverter}}" Margin="0,-9,0,12"/>
+                </DataTemplate>-->
+            </phone:Pivot.HeaderTemplate>
+
+            <phone:PivotItem Header="{Binding LocalizedResources.People, Source={StaticResource LocalizedStrings}}" Margin="0">
+                <ListBox x:Name="SearchResultsListBox" Margin="12,24,12,0" ItemTemplate="{StaticResource UserListTemplate}" ItemsSource="{Binding}" d:DataContext="{d:DesignData /SampleData/UsersSampleData.xaml}"/>
+            </phone:PivotItem>
+
+            <!--<phone:PivotItem Header="{Binding LocalizedResources.Tags, Source={StaticResource LocalizedStrings}}" Margin="0">
+
+            </phone:PivotItem>-->
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>

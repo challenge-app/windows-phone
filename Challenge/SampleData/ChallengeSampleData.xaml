@@ -1,0 +1,11 @@
+﻿<Models:Challenge xmlns:Models="clr-namespace:ChallengeApp.Models" doubts="54" id="Aliquam vestibulum curabitur maecenas adipiscing" likes="27" reward="97" status="11" type="video" timestamp="0" url="http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test1_Talkinghead_mp4_480x360.mp4">
+	<Models:Challenge.info>
+		<Models:ChallengeBase description="Duis praesent nam accumsan" generalDoubts="10" generalLikes="92" id="Cras phasellus" timestamp="0"/>
+	</Models:Challenge.info>
+    <Models:Challenge.receiver>
+        <Models:User IsFollowing="False" authToken="Maecenas primis rutrum praesent" email="B" firstName="B" id="Odio lacinia" lastName="B" username="B"/>
+	</Models:Challenge.receiver>
+    <Models:Challenge.sender>
+        <Models:User IsFollowing="True" authToken="Habitasse pede sagittis" email="A" firstName="A" id="Fringilla orci pulvinar" lastName="A" username="A"/>
+    </Models:Challenge.sender>
+</Models:Challenge>

@@ -1,0 +1,79 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+    x:Name="RootElement" 
+    x:Class="ChallengeApp.ChallengeMedia"
+    xmlns:utils="clr-namespace:ChallengeApp.Utils"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+	d:DataContext="{d:DesignData /SampleData/ChallengeSampleData.xaml}"
+	d:DesignHeight="600" d:DesignWidth="400">
+	
+	<UserControl.Resources>
+		<utils:NullableToVisibilityConverter x:Key="NullableToVisibilityConverter"/>
+	</UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Visibility="{Binding url, Converter={StaticResource NullableToVisibilityConverter}}">
+    	<i:Interaction.Behaviors>
+    		<ec:DataStateBehavior Binding="{Binding type}" Value="video" TrueState="VideoMedia" FalseState="PictureMedia"/>
+    	</i:Interaction.Behaviors>
+    	<VisualStateManager.VisualStateGroups>
+    		<VisualStateGroup x:Name="MediaTypeStates">
+    			<VisualState x:Name="PictureMedia">
+    				<Storyboard>
+    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ImageElement">
+    						<DiscreteObjectKeyFrame KeyTime="0">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Visibility>Visible</Visibility>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    					</ObjectAnimationUsingKeyFrames>
+    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="VideoElement">
+    						<DiscreteObjectKeyFrame KeyTime="0">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Visibility>Collapsed</Visibility>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    					</ObjectAnimationUsingKeyFrames>
+    				</Storyboard>
+    			</VisualState>
+    			<VisualState x:Name="VideoMedia">
+    				<Storyboard>
+    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="VideoElement">
+    						<DiscreteObjectKeyFrame KeyTime="0">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Visibility>Visible</Visibility>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    					</ObjectAnimationUsingKeyFrames>
+    					<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ImageElement">
+    						<DiscreteObjectKeyFrame KeyTime="0">
+    							<DiscreteObjectKeyFrame.Value>
+    								<Visibility>Collapsed</Visibility>
+    							</DiscreteObjectKeyFrame.Value>
+    						</DiscreteObjectKeyFrame>
+    					</ObjectAnimationUsingKeyFrames>
+    				</Storyboard>
+    			</VisualState>
+    		</VisualStateGroup>
+    	</VisualStateManager.VisualStateGroups>
+
+        <Grid Height="{Binding ActualWidth, ElementName=LayoutRoot}" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+            <Rectangle StrokeThickness="0" Fill="#00000000" HorizontalAlignment="Stretch"/>
+            
+            <Grid>
+                <Path Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Stretch="Fill"/>
+            </Grid>
+            
+            <Grid>
+            	<Image x:Name="ImageElement" Source="{Binding url}" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" CacheMode="BitmapCache" Visibility="Collapsed"/>
+            	<MediaElement x:Name="VideoElement" Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" Source="{Binding url}"/>
+            </Grid>
+		</Grid>
+	</Grid>
+</UserControl>

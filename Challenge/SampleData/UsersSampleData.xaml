@@ -1,0 +1,162 @@
+﻿<Models:Users xmlns:Models="clr-namespace:ChallengeApp.Models" Capacity="96">
+    <Models:User IsFollowing="True" authToken="Curae praesent integer" email="someone@example.com" firstName="Aaberg, Jesper" id="ID" lastName="Duis morbi sed nulla vestibulum" username="Etiam parturient">
+        <Models:User.followingList>
+            <Models:User IsFollowing="True" authToken="Proin quisque" email="user@adventure-works.com" firstName="Adams, Ellen" id="ID" lastName="Aptent arcu felis diam eget" username="Dolor amet aliquam phasellus"/>
+            <Models:User IsFollowing="False" authToken="Congue lacus lorem consequat elit" email="someone@adventure-works.com" firstName="Adams, Terry" id="ID" lastName="Est hac facilisi faucibus conubia" username="Magna dis"/>
+            <Models:User IsFollowing="True" authToken="Habitant nibh dapibus" email="user@example.com" firstName="Adams, Terry" id="ID" lastName="Feugiat massa" username="Inceptos vestibulum leo"/>
+            <Models:User IsFollowing="False" authToken="Mus dictum nec" email="user-3@fabrikam.com" firstName="Pfeiffer, Michael" id="ID" lastName="Lobortis natoque fermentum" username="Lectus adipiscing per"/>
+            <Models:User IsFollowing="True" authToken="Vestibulum pede metus" email="user-4@fabrikam.com" firstName="Philips, Carol" id="ID" lastName="Adipiscing netus potenti luctus" username="Vestibulum pulvinar"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="False" authToken="Nulla quam porta magnis" email="user-5@fabrikam.com" firstName="Poe, Toni" id="ID" lastName="Duis sociosqu vel habitasse" username="Risus fringilla"/>
+            <Models:User IsFollowing="True" authToken="Viverra nunc" email="user-6@fabrikam.com" firstName="Hicks, Cassie" id="ID" lastName="Etiam imperdiet" username="Hendrerit sed himenaeos class curae"/>
+            <Models:User IsFollowing="False" authToken="Integer suscipit" email="user-7@fabrikam.com" firstName="Argentiero, Luca" id="ID" lastName="Est tincidunt mollis" username="Penatibus vivamus porttitor"/>
+            <Models:User IsFollowing="True" authToken="Mus ultricies" email="user-8@fabrikam.com" firstName="Perry, Brian" id="ID" lastName="Cubilia nostra per lorem diam" username="Arcu non blandit vehicula commodo"/>
+            <Models:User IsFollowing="False" authToken="Ornare eget morbi" email="someone-1@adventure-works.com" firstName="Ramos, Luciana" id="ID" lastName="Rutrum sit" username="Vestibulum maecenas nulla sem"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="False" authToken="Semper vel sociis adipiscing" email="someone-2@adventure-works.com" firstName="Barber, David" id="ID" lastName="Facilisi dolor" username="Nam parturient taciti">
+        <Models:User.followingList>
+            <Models:User IsFollowing="False" authToken="Felis euismod" email="someone-3@adventure-works.com" firstName="Jamison, Jay" id="ID" lastName="Nisi consequat" username="Ipsum hac inceptos feugiat"/>
+            <Models:User IsFollowing="True" authToken="Interdum convallis" email="someone-4@adventure-works.com" firstName="Reid, Miles" id="ID" lastName="Nisl facilisis laoreet" username="Iaculis nascetur elementum"/>
+            <Models:User IsFollowing="False" authToken="Lacus pharetra vestibulum" email="someone-5@adventure-works.com" firstName="Bowen, Eli" id="ID" lastName="Posuere nec non" username="Mus nunc"/>
+            <Models:User IsFollowing="True" authToken="Magna aenean" email="someone-6@adventure-works.com" firstName="Kane, John" id="ID" lastName="Pretium rhoncus hendrerit sodales" username="Mauris potenti"/>
+            <Models:User IsFollowing="False" authToken="Sed parturient himenaeos orci" email="someone-7@adventure-works.com" firstName="Sarin, Raman" id="ID" lastName="Morbi malesuada dictum" username="Vestibulum vestibulum"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="True" authToken="Neque lectus senectus porttitor quisque" email="someone@example.com" firstName="Sato, Naoki" id="ID" lastName="Aliquam tincidunt netus luctus" username="Urna ligula"/>
+            <Models:User IsFollowing="False" authToken="Sit tristique" email="user@adventure-works.com" firstName="Silva, Alexandre" id="ID" lastName="Duis ultricies magnis mattis venenatis" username="Parturient cras"/>
+            <Models:User IsFollowing="True" authToken="Conubia purus vestibulum vehicula risus" email="someone@adventure-works.com" firstName="Cook, Kevin" id="ID" lastName="Dapibus nunc volutpat" username="Vestibulum nam velit consequat"/>
+            <Models:User IsFollowing="False" authToken="Montes euismod" email="user@example.com" firstName="Li, Yuhong" id="ID" lastName="Class vestibulum amet dignissim elementum" username="Vestibulum convallis"/>
+            <Models:User IsFollowing="True" authToken="Hac facilisis leo mus arcu" email="user-3@fabrikam.com" firstName="Strande, Amy" id="ID" lastName="Platea habitant per vestibulum" username="Nostra fringilla facilisi non ornare"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="True" authToken="Inceptos interdum gravida hendrerit himenaeos" email="user-4@fabrikam.com" firstName="Makovac, Zrinka" id="ID" lastName="Nam enim" username="Iaculis lacinia eget laoreet vel">
+        <Models:User.followingList>
+            <Models:User IsFollowing="True" authToken="Rutrum malesuada erat lorem morbi" email="user-5@fabrikam.com" firstName="Miller, Ben" id="ID" lastName="Tincidunt rhoncus" username="Penatibus pretium porttitor nulla nascetur"/>
+            <Models:User IsFollowing="False" authToken="Proin tristique" email="user-6@fabrikam.com" firstName="Orton, Jon" id="ID" lastName="Taciti est sagittis senectus" username="Pharetra adipiscing placerat"/>
+            <Models:User IsFollowing="True" authToken="Viverra aliquam vulputate" email="user-7@fabrikam.com" firstName="Zhang, Larry" id="ID" lastName="Odio quisque adipiscing" username="Hac vestibulum sociosqu curabitur phasellus"/>
+            <Models:User IsFollowing="False" authToken="Torquent dolor aliquam fames ultrices" email="user-8@fabrikam.com" firstName="Gladkikh, Andrey" id="ID" lastName="Nec tellus maecenas" username="Volutpat mus"/>
+            <Models:User IsFollowing="True" authToken="Praesent elementum" email="someone-1@adventure-works.com" firstName="Meyer, April" id="ID" lastName="Tempus commodo" username="Adipiscing aliquet parturient"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="False" authToken="Non ipsum urna vestibulum" email="someone-2@adventure-works.com" firstName="Clark, Molly" id="ID" lastName="Hendrerit eleifend facilisi" username="Adipiscing duis"/>
+            <Models:User IsFollowing="True" authToken="Vestibulum vestibulum turpis faucibus" email="someone-3@adventure-works.com" firstName="Dellamore, Luca" id="ID" lastName="Aenean diam" username="Varius amet"/>
+            <Models:User IsFollowing="False" authToken="Sem justo" email="someone-4@adventure-works.com" firstName="Aaberg, Jesper" id="ID" lastName="Lobortis nascetur parturient" username="Mauris penatibus elit porttitor lacus"/>
+            <Models:User IsFollowing="True" authToken="Vel tristique ultricies pharetra erat" email="someone-5@adventure-works.com" firstName="Adams, Ellen" id="ID" lastName="Vestibulum natoque sed placerat" username="Iaculis nibh venenatis"/>
+            <Models:User IsFollowing="False" authToken="Adipiscing aptent magna massa parturient" email="someone-6@adventure-works.com" firstName="Adams, Terry" id="ID" lastName="Metus quam posuere potenti libero" username="Dis cursus dictum odio"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="False" authToken="Pretium vulputate ligula litora luctus" email="someone-7@adventure-works.com" firstName="Adams, Terry" id="ID" lastName="Sodales torquent magnis purus" username="Neque netus curabitur nulla phasellus">
+        <Models:User.followingList>
+            <Models:User IsFollowing="False" authToken="Viverra mattis" email="someone@example.com" firstName="Pfeiffer, Michael" id="ID" lastName="Mollis duis vivamus mus consequat" username="Maecenas praesent accumsan hac"/>
+            <Models:User IsFollowing="True" authToken="Vitae class" email="user@adventure-works.com" firstName="Philips, Carol" id="ID" lastName="Nostra facilisis dictumst" username="Dignissim montes amet sed elementum"/>
+            <Models:User IsFollowing="False" authToken="Arcu sit diam" email="someone@adventure-works.com" firstName="Poe, Toni" id="ID" lastName="Morbi fringilla primis" username="Ornare vestibulum"/>
+            <Models:User IsFollowing="True" authToken="Rutrum elit nulla commodo conubia" email="user@example.com" firstName="Hicks, Cassie" id="ID" lastName="Nam augue erat" username="Euismod sapien feugiat habitasse"/>
+            <Models:User IsFollowing="False" authToken="Eros nibh iaculis hendrerit" email="user-3@fabrikam.com" firstName="Argentiero, Luca" id="ID" lastName="Lacinia himenaeos felis sociis adipiscing" username="Vestibulum semper"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="True" authToken="Taciti parturient odio natoque" email="user-4@fabrikam.com" firstName="Perry, Brian" id="ID" lastName="Penatibus tortor potenti" username="Vestibulum justo lacus lorem tempor"/>
+            <Models:User IsFollowing="False" authToken="Adipiscing pede parturient senectus magna" email="user-5@fabrikam.com" firstName="Ramos, Luciana" id="ID" lastName="Viverra urna tincidunt tristique" username="Quam suscipit quis"/>
+            <Models:User IsFollowing="True" authToken="Varius metus ultricies cras" email="user-6@fabrikam.com" firstName="Barber, David" id="ID" lastName="Nunc neque vulputate" username="Hac vivamus"/>
+            <Models:User IsFollowing="False" authToken="Adipiscing amet leo aliquet" email="user-7@fabrikam.com" firstName="Jamison, Jay" id="ID" lastName="Arcu blandit vestibulum" username="Parturient phasellus volutpat"/>
+            <Models:User IsFollowing="True" authToken="Accumsan commodo consequat bibendum" email="user-8@fabrikam.com" firstName="Reid, Miles" id="ID" lastName="Eleifend facilisi dictum lectus vestibulum" username="Convallis non per sed"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="True" authToken="Adipiscing elit" email="someone-1@adventure-works.com" firstName="Bowen, Eli" id="ID" lastName="Conubia litora dignissim cubilia dapibus" username="Habitant enim">
+        <Models:User.followingList>
+            <Models:User IsFollowing="True" authToken="Parturient euismod interdum vestibulum facilisis" email="someone-2@adventure-works.com" firstName="Kane, John" id="ID" lastName="Eros sed porta iaculis mauris" username="Feugiat magnis"/>
+            <Models:User IsFollowing="False" authToken="Nibh nisi nascetur parturient vestibulum" email="someone-3@adventure-works.com" firstName="Sarin, Raman" id="ID" lastName="Laoreet velit nunc" username="Est nisl"/>
+            <Models:User IsFollowing="True" authToken="Montes parturient hac placerat" email="someone-4@adventure-works.com" firstName="Sato, Naoki" id="ID" lastName="Habitasse quam quis rutrum" username="Ornare donec vestibulum platea"/>
+            <Models:User IsFollowing="False" authToken="Sapien adipiscing" email="someone-5@adventure-works.com" firstName="Silva, Alexandre" id="ID" lastName="Fusce potenti torquent pretium semper" username="Non senectus vestibulum sociosqu"/>
+            <Models:User IsFollowing="True" authToken="Sodales viverra per vehicula cras" email="someone-6@adventure-works.com" firstName="Cook, Kevin" id="ID" lastName="Adipiscing malesuada nunc lorem penatibus" username="Sed imperdiet duis"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="False" authToken="Sem integer sit tempus" email="someone-7@adventure-works.com" firstName="Li, Yuhong" id="ID" lastName="Tincidunt bibendum dictumst quisque" username="Maecenas praesent tortor turpis"/>
+            <Models:User IsFollowing="True" authToken="Arcu tristique" email="someone@example.com" firstName="Strande, Amy" id="ID" lastName="Aliquam mauris" username="Eget ultricies"/>
+            <Models:User IsFollowing="False" authToken="Eleifend facilisi blandit commodo" email="user@adventure-works.com" firstName="Makovac, Zrinka" id="ID" lastName="Conubia congue erat cursus dictum" username="Vestibulum habitant"/>
+            <Models:User IsFollowing="True" authToken="Lectus curabitur cubilia" email="someone@adventure-works.com" firstName="Miller, Ben" id="ID" lastName="Nisi adipiscing" username="Vestibulum phasellus"/>
+            <Models:User IsFollowing="False" authToken="Lobortis hac consequat litora nisl" email="user@example.com" firstName="Orton, Jon" id="ID" lastName="Convallis non dignissim pulvinar vestibulum" username="Mus placerat odio orci luctus"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="False" authToken="Sagittis quam adipiscing sed" email="user-3@fabrikam.com" firstName="Zhang, Larry" id="ID" lastName="Suscipit vestibulum mollis" username="Dapibus mauris senectus sociosqu egestas">
+        <Models:User.followingList>
+            <Models:User IsFollowing="False" authToken="Ultrices fames felis" email="user-4@fabrikam.com" firstName="Gladkikh, Andrey" id="ID" lastName="Ornare adipiscing fermentum iaculis cras" username="Vehicula volutpat maecenas"/>
+            <Models:User IsFollowing="True" authToken="Parturient platea laoreet amet natoque" email="user-5@fabrikam.com" firstName="Meyer, April" id="ID" lastName="Lorem vel arcu nam" username="Sapien semper vestibulum habitasse"/>
+            <Models:User IsFollowing="False" authToken="Diam sociis eget accumsan taciti" email="user-6@fabrikam.com" firstName="Clark, Molly" id="ID" lastName="Imperdiet tempor morbi vestibulum eros" username="Erat magna vestibulum"/>
+            <Models:User IsFollowing="True" authToken="Potenti penatibus nisi hac" email="user-7@fabrikam.com" firstName="Dellamore, Luca" id="ID" lastName="Aenean porttitor" username="Turpis dictumst varius rhoncus leo"/>
+            <Models:User IsFollowing="False" authToken="Nec neque nullam viverra" email="user-8@fabrikam.com" firstName="Aaberg, Jesper" id="ID" lastName="Aptent orci auctor parturient" username="Netus integer adipiscing"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="True" authToken="Porta lobortis purus sit" email="someone-1@adventure-works.com" firstName="Adams, Ellen" id="ID" lastName="Vel velit pede" username="Congue ultricies"/>
+            <Models:User IsFollowing="False" authToken="Dictum vestibulum pharetra vestibulum" email="someone-2@adventure-works.com" firstName="Adams, Terry" id="ID" lastName="Libero curabitur" username="Commodo nam sed"/>
+            <Models:User IsFollowing="True" authToken="Adipiscing sagittis parturient" email="someone-3@adventure-works.com" firstName="Adams, Terry" id="ID" lastName="Duis luctus hac" username="Consequat cras"/>
+            <Models:User IsFollowing="False" authToken="Convallis vestibulum dignissim" email="someone-4@adventure-works.com" firstName="Pfeiffer, Michael" id="ID" lastName="Parturient nec elementum senectus" username="Mus amet ante arcu"/>
+            <Models:User IsFollowing="True" authToken="Facilisis mattis" email="someone-5@adventure-works.com" firstName="Philips, Carol" id="ID" lastName="Vestibulum fringilla sed" username="Diam eget fermentum suscipit"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="True" authToken="Adipiscing parturient montes" email="someone-6@adventure-works.com" firstName="Poe, Toni" id="ID" lastName="Vestibulum laoreet adipiscing parturient" username="Sed vestibulum lacinia">
+        <Models:User.followingList>
+            <Models:User IsFollowing="True" authToken="Est hac" email="someone-7@adventure-works.com" firstName="Hicks, Cassie" id="ID" lastName="Nulla elit potenti vestibulum pretium" username="Himenaeos imperdiet primis maecenas"/>
+            <Models:User IsFollowing="False" authToken="Praesent mus" email="someone@example.com" firstName="Argentiero, Luca" id="ID" lastName="Nibh semper" username="Eros proin rutrum"/>
+            <Models:User IsFollowing="True" authToken="Per bibendum sodales viverra porttitor" email="user@adventure-works.com" firstName="Perry, Brian" id="ID" lastName="Taciti dolor facilisi sem fames" username="Augue sed aliquam tincidunt"/>
+            <Models:User IsFollowing="False" authToken="Nisi nisl tempor venenatis felis" email="someone@adventure-works.com" firstName="Ramos, Luciana" id="ID" lastName="Inceptos tempus vel tortor vivamus" username="Faucibus habitant quisque sit"/>
+            <Models:User IsFollowing="True" authToken="Varius vestibulum nascetur" email="user@example.com" firstName="Barber, David" id="ID" lastName="Massa auctor convallis" username="Lorem pharetra phasellus nunc odio"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="False" authToken="Sed aliquam" email="user-3@fabrikam.com" firstName="Jamison, Jay" id="ID" lastName="Parturient vestibulum" username="Quam aliquet"/>
+            <Models:User IsFollowing="True" authToken="Metus morbi vestibulum" email="user-4@fabrikam.com" firstName="Reid, Miles" id="ID" lastName="Hac leo" username="Blandit adipiscing"/>
+            <Models:User IsFollowing="False" authToken="Conubia vestibulum urna cubilia" email="user-5@fabrikam.com" firstName="Bowen, Eli" id="ID" lastName="Adipiscing ultrices non parturient" username="Suscipit lectus libero torquent"/>
+            <Models:User IsFollowing="True" authToken="Euismod litora" email="user-6@fabrikam.com" firstName="Kane, John" id="ID" lastName="Hendrerit magnis" username="Feugiat per gravida sed"/>
+            <Models:User IsFollowing="False" authToken="Lacinia nunc amet ante" email="user-7@fabrikam.com" firstName="Sarin, Raman" id="ID" lastName="Posuere maecenas himenaeos sit potenti" username="Arcu diam"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="False" authToken="Parturient vel vestibulum" email="user-8@fabrikam.com" firstName="Sato, Naoki" id="ID" lastName="Sodales nibh nam etiam" username="Rhoncus donec adipiscing erat">
+        <Models:User.followingList>
+            <Models:User IsFollowing="False" authToken="Lorem morbi dictumst" email="someone-1@adventure-works.com" firstName="Silva, Alexandre" id="ID" lastName="Nunc tincidunt" username="Vestibulum adipiscing ornare viverra platea"/>
+            <Models:User IsFollowing="True" authToken="Tristique dolor facilisi" email="someone-2@adventure-works.com" firstName="Cook, Kevin" id="ID" lastName="Sapien venenatis parturient vulputate hac" username="Felis odio"/>
+            <Models:User IsFollowing="False" authToken="Leo curabitur vestibulum phasellus adipiscing" email="someone-3@adventure-works.com" firstName="Li, Yuhong" id="ID" lastName="Parturient sociis taciti urna" username="Mus justo habitant consequat"/>
+            <Models:User IsFollowing="True" authToken="Vestibulum quisque" email="someone-4@adventure-works.com" firstName="Strande, Amy" id="ID" lastName="Non vestibulum vivamus" username="Adipiscing lorem"/>
+            <Models:User IsFollowing="False" authToken="Sed metus morbi" email="someone-5@adventure-works.com" firstName="Makovac, Zrinka" id="ID" lastName="Adipiscing fermentum parturient fringilla vestibulum" username="Vestibulum lobortis aliquet"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="True" authToken="Vestibulum porta nascetur tortor adipiscing" email="someone-6@adventure-works.com" firstName="Miller, Ben" id="ID" lastName="Sed dis placerat aenean nunc" username="Cubilia turpis"/>
+            <Models:User IsFollowing="False" authToken="Amet nullam est" email="someone-7@adventure-works.com" firstName="Orton, Jon" id="ID" lastName="Risus nec velit" username="Arcu vestibulum sagittis hendrerit vestibulum"/>
+            <Models:User IsFollowing="True" authToken="Imperdiet malesuada" email="someone@example.com" firstName="Zhang, Larry" id="ID" lastName="Lectus non" username="Sociosqu suscipit"/>
+            <Models:User IsFollowing="False" authToken="Vestibulum litora adipiscing elit enim" email="user@adventure-works.com" firstName="Gladkikh, Andrey" id="ID" lastName="Sem ultrices donec tincidunt" username="Eros luctus"/>
+            <Models:User IsFollowing="True" authToken="Sit mattis etiam mauris" email="someone@adventure-works.com" firstName="Meyer, April" id="ID" lastName="Vel lorem" username="Volutpat mollis venenatis"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="True" authToken="Nibh parturient consequat" email="user@example.com" firstName="Clark, Molly" id="ID" lastName="Nulla convallis" username="Accumsan bibendum nam dictumst eleifend">
+        <Models:User.followingList>
+            <Models:User IsFollowing="True" authToken="Ornare dignissim" email="user-3@fabrikam.com" firstName="Dellamore, Luca" id="ID" lastName="Elementum vivamus nunc" username="Dolor integer est"/>
+            <Models:User IsFollowing="False" authToken="Vestibulum felis ipsum vestibulum" email="user-4@fabrikam.com" firstName="Aaberg, Jesper" id="ID" lastName="Sapien lorem adipiscing habitasse" username="Habitant inceptos aliquam interdum aliquet"/>
+            <Models:User IsFollowing="True" authToken="Mus nec" email="user-5@fabrikam.com" firstName="Adams, Ellen" id="ID" lastName="Per egestas magna euismod" username="Cubilia dapibus semper"/>
+            <Models:User IsFollowing="False" authToken="Adipiscing gravida sociis" email="user-6@fabrikam.com" firstName="Adams, Terry" id="ID" lastName="Sagittis tristique iaculis" username="Penatibus sem taciti"/>
+            <Models:User IsFollowing="True" authToken="Neque tellus" email="user-7@fabrikam.com" firstName="Adams, Terry" id="ID" lastName="Tempus laoreet vestibulum risus" username="Lacinia porta purus vestibulum cras"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="False" authToken="Tortor nunc curabitur adipiscing" email="user-8@fabrikam.com" firstName="Pfeiffer, Michael" id="ID" lastName="Posuere potenti est convallis velit" username="Vestibulum dis"/>
+            <Models:User IsFollowing="True" authToken="Pretium senectus varius" email="someone-1@adventure-works.com" firstName="Philips, Carol" id="ID" lastName="Sodales elit aenean mauris" username="Hac adipiscing eget vitae"/>
+            <Models:User IsFollowing="False" authToken="Parturient mus fusce" email="someone-2@adventure-works.com" firstName="Poe, Toni" id="ID" lastName="Torquent ultrices vehicula" username="Non per"/>
+            <Models:User IsFollowing="True" authToken="Facilisis vestibulum aliquam" email="someone-3@adventure-works.com" firstName="Hicks, Cassie" id="ID" lastName="Aptent habitasse commodo" username="Nullam fermentum"/>
+            <Models:User IsFollowing="False" authToken="Erat eros maecenas" email="someone-4@adventure-works.com" firstName="Argentiero, Luca" id="ID" lastName="Cursus proin dis nibh" username="Conubia cubilia accumsan bibendum"/>
+        </Models:User.followersList>
+    </Models:User>
+    <Models:User IsFollowing="False" authToken="Himenaeos dapibus eleifend nisi augue" email="someone-5@adventure-works.com" firstName="Perry, Brian" id="ID" lastName="Libero dolor" username="Lectus nisl imperdiet">
+        <Models:User.followingList>
+            <Models:User IsFollowing="False" authToken="Malesuada vestibulum orci ligula litora" email="someone-6@adventure-works.com" firstName="Ramos, Luciana" id="ID" lastName="Lobortis nec" username="Leo luctus pede"/>
+            <Models:User IsFollowing="True" authToken="Nascetur vestibulum non" email="someone-7@adventure-works.com" firstName="Barber, David" id="ID" lastName="Euismod tincidunt parturient ipsum" username="Vestibulum egestas"/>
+            <Models:User IsFollowing="False" authToken="Mauris tristique" email="someone@example.com" firstName="Jamison, Jay" id="ID" lastName="Nam placerat" username="Pharetra mollis justo"/>
+            <Models:User IsFollowing="True" authToken="Est sagittis montes" email="user@adventure-works.com" firstName="Reid, Miles" id="ID" lastName="Cras vulputate gravida parturient leo" username="Sociosqu lorem"/>
+            <Models:User IsFollowing="False" authToken="Ultrices metus nostra" email="someone@adventure-works.com" firstName="Bowen, Eli" id="ID" lastName="Non arcu volutpat" username="Vehicula adipiscing"/>
+        </Models:User.followingList>
+        <Models:User.followersList>
+            <Models:User IsFollowing="True" authToken="Phasellus diam" email="user@example.com" firstName="Kane, John" id="ID" lastName="Parturient neque accumsan iaculis" username="Consequat convallis vestibulum eget"/>
+            <Models:User IsFollowing="False" authToken="Sem enim bibendum" email="user-3@fabrikam.com" firstName="Sarin, Raman" id="ID" lastName="Nulla vestibulum sed" username="Sit laoreet natoque vel"/>
+            <Models:User IsFollowing="True" authToken="Dictumst vestibulum posuere" email="user-4@fabrikam.com" firstName="Sato, Naoki" id="ID" lastName="Eleifend sociis" username="Potenti dis porta"/>
+            <Models:User IsFollowing="False" authToken="Taciti faucibus" email="user-5@fabrikam.com" firstName="Silva, Alexandre" id="ID" lastName="Sodales risus" username="Imperdiet nibh malesuada"/>
+            <Models:User IsFollowing="True" authToken="Velit viverra vestibulum adipiscing vitae" email="user-6@fabrikam.com" firstName="Cook, Kevin" id="ID" lastName="Placerat vestibulum aliquam vestibulum pulvinar" username="Tincidunt tristique lobortis nisi class"/>
+        </Models:User.followersList>
+    </Models:User>
+</Models:Users>

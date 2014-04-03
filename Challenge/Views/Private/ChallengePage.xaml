@@ -1,0 +1,87 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="ChallengeApp.Views.Private.ChallengePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    xmlns:local="clr-namespace:ChallengeApp"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource AppSystemTrayBackgroundColor}" 
+    shell:SystemTray.ForegroundColor="{StaticResource AppSystemTrayForegroundColor}"
+    Background="{StaticResource AppBackgroundBrush}" 
+    Foreground="{StaticResource AppForegroundBrush}"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+	<Grid x:Name="LayoutRoot" Margin="0,-1" Background="{StaticResource AppBackgroundBrush}">
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="ReceiverStates">
+				<VisualState x:Name="ItsMe">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="SendChallenge">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Visible</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+				<VisualState x:Name="NotMe">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="SendChallenge">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<Visibility>Collapsed</Visibility>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<!--<ContentPresenter Margin="0" ContentTemplate="{StaticResource ChallengeTemplate}" Content="{Binding ChallengeObject}"/>-->
+		<ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+			<StackPanel Margin="0,0,0,24" VerticalAlignment="Top" d:DataContext="{d:DesignData /SampleData/ChallengeSampleData.xaml}" DataContext="{Binding ChallengeObject}">
+		        <i:Interaction.Behaviors>
+			        <ec:DataStateBehavior Binding="{Binding receiver.id}" Value="{Binding LoggedUser.id, Source={StaticResource UserController}}" TrueState="ItsMe" FalseState="NotMe"/>
+		        </i:Interaction.Behaviors>
+                
+				<StackPanel Orientation="Horizontal" Margin="24,12">
+					<TextBlock Text="{Binding email, Converter={StaticResource UpperCaseConverter}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource AppLinkBrush}" HorizontalAlignment="Left" DataContext="{Binding sender}" Tap="UserProfileClick"/>
+					<TextBlock Text=" vs " FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource AppForegroundBrush}" HorizontalAlignment="Left"/>
+					<TextBlock Text="{Binding email, Converter={StaticResource UpperCaseConverter}}" FontWeight="Bold" FontSize="{StaticResource PhoneFontSizeLarge}" Foreground="{StaticResource AppLinkBrush}" HorizontalAlignment="Left" DataContext="{Binding receiver}" Tap="UserProfileClick"/>
+                </StackPanel>
+
+                <Grid>
+                    <local:ChallengeMedia x:Name="ChallengeMedia" Margin="0,0,0,24" />
+                    <Image x:Name="TMPIMG"/>
+                </Grid>
+
+                <!--<StackPanel Margin="12,0,12,12" Orientation="Horizontal" HorizontalAlignment="Center">
+					<Border Height="100" Width="100" Margin="0" VerticalAlignment="Top" BorderThickness="2" BorderBrush="White">
+						<Border.Background>
+							<ImageBrush ImageSource="/Assets/Avatar/brunolemos.jpg" Stretch="UniformToFill" />
+						</Border.Background>
+					</Border>
+
+					<Border Height="100" Width="100" Margin="24,0,0,0" VerticalAlignment="Top" BorderThickness="2" BorderBrush="White">
+						<Border.Background>
+							<ImageBrush ImageSource="/Assets/Avatar/gadu.jpg" Stretch="UniformToFill" />
+						</Border.Background>
+					</Border>
+				</StackPanel>-->
+
+				<TextBlock Text="{Binding info.description}" TextWrapping="Wrap" Margin="24,0,24,12" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Medium" Foreground="{StaticResource AppForegroundBrush}" HorizontalAlignment="Center" TextAlignment="Center" />
+				<Button x:Name="SendChallenge" Content="Cumprir desafio" Foreground="White" BorderBrush="White" Background="{StaticResource AppFlatGreenBrush}" Visibility="Collapsed" Click="SendChallenge_Click"/>
+			</StackPanel>
+		</ScrollViewer>
+	</Grid>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>pt-BR</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Challenge</value>
+  </data>
+  <data name="Feed" xml:space="preserve">
+    <value>Feed</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notificações</value>
+  </data>
+  <data name="Discover" xml:space="preserve">
+    <value>Descobrir</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Perfil</value>
+  </data>
+  <data name="NewChallenge" xml:space="preserve">
+    <value>Novo desafio</value>
+  </data>
+  <data name="New" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="CreateAccount" xml:space="preserve">
+    <value>Criar conta</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Usuário</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Carregando</value>
+  </data>
+  <data name="ERROR_MISSING_PARAMETER" xml:space="preserve">
+    <value>Faltando parâmetro: '{0}'</value>
+  </data>
+  <data name="ERROR_USER_ALREADY_EXISTS" xml:space="preserve">
+    <value>Usuário já existe :/</value>
+  </data>
+  <data name="ERROR_PLEASE_SIGN_IN" xml:space="preserve">
+    <value>Por favor, faça o login</value>
+  </data>
+  <data name="ERROR_ALREADY_FOLLOWING" xml:space="preserve">
+    <value>Você já está seguindo este usuário</value>
+  </data>
+  <data name="ERROR_CHALLENGE_ALREADY_DOUBTED" xml:space="preserve">
+    <value>Você já duvidou deste desafio</value>
+  </data>
+  <data name="ERROR_CHALLENGE_ALREADY_KILLED" xml:space="preserve">
+    <value>Você já curtiu este desafio</value>
+  </data>
+  <data name="ERROR_CHALLENGE_ALREADY_REFUSED" xml:space="preserve">
+    <value>Desafio já foi recusado</value>
+  </data>
+  <data name="ERROR_CHALLENGE_IS_FINALIZED" xml:space="preserve">
+    <value>Este desafio foi finalizado (aceito ou recusado)</value>
+    <comment>Aceito finaliza?</comment>
+  </data>
+  <data name="ERROR_CHALLENGE_NOT_A_FOLLOWER" xml:space="preserve">
+    <value>Este usuário aceita desafios apenas de seguidores.</value>
+  </data>
+  <data name="ERROR_CHALLENGE_NOT_FOUND" xml:space="preserve">
+    <value>Desafio não encontrado</value>
+  </data>
+  <data name="ERROR_CHALLENGE_NOT_YOURS" xml:space="preserve">
+    <value>Este desafio pertence à outra pessoa</value>
+  </data>
+  <data name="ERROR_CHALLENGE_YOURSELF" xml:space="preserve">
+    <value>Você não pode se desafiar :P</value>
+  </data>
+  <data name="ERROR_INVALID_PARAMETER_TYPE" xml:space="preserve">
+    <value>Parâmetro 'type' deve ser igual a 'video' ou 'picture'</value>
+  </data>
+  <data name="ERROR_JUST_SIGNOUT" xml:space="preserve">
+    <value>Você acabou de se desconectar</value>
+    <comment>?</comment>
+  </data>
+  <data name="ERROR_PASSWORD_INCORRECT" xml:space="preserve">
+    <value>Oops! Senha incorreta</value>
+  </data>
+  <data name="ERROR_USER_NOT_FOUND" xml:space="preserve">
+    <value>Usuário não encontrado</value>
+  </data>
+  <data name="Just1Sec" xml:space="preserve">
+    <value>Só um segundo</value>
+  </data>
+  <data name="LoggingIn" xml:space="preserve">
+    <value>Entrando</value>
+  </data>
+  <data name="PleaseWait" xml:space="preserve">
+    <value>Por favor, aguarde</value>
+  </data>
+  <data name="AccomplishedTheChallenge" xml:space="preserve">
+    <value>Cumpriu o desafio</value>
+  </data>
+  <data name="SomethingWentWrong" xml:space="preserve">
+    <value>Desculpe, alguma coisa deu errado</value>
+  </data>
+  <data name="CreatingAccount" xml:space="preserve">
+    <value>Criando conta</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="ChallengeVerb" xml:space="preserve">
+    <value>Desafiar</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="AMinuteAgo" xml:space="preserve">
+    <value>1 min</value>
+  </data>
+  <data name="AnHourAgo" xml:space="preserve">
+    <value>1h</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Comentários</value>
+  </data>
+  <data name="JustNow" xml:space="preserve">
+    <value>agora</value>
+  </data>
+  <data name="NDaysAgo" xml:space="preserve">
+    <value>{0}d</value>
+  </data>
+  <data name="NHoursAgo" xml:space="preserve">
+    <value>{0}h</value>
+  </data>
+  <data name="NMinutesAgo" xml:space="preserve">
+    <value>{0}min</value>
+  </data>
+  <data name="NMonthsAgo" xml:space="preserve">
+    <value>{0} meses</value>
+  </data>
+  <data name="NWeeksAgo" xml:space="preserve">
+    <value>{0} semanas</value>
+  </data>
+  <data name="NYearsAgo" xml:space="preserve">
+    <value>{0} anos</value>
+  </data>
+  <data name="OneMonthAgo" xml:space="preserve">
+    <value>1 mês</value>
+  </data>
+  <data name="OneWeekAgo" xml:space="preserve">
+    <value>1 semana</value>
+  </data>
+  <data name="OneYearAgo" xml:space="preserve">
+    <value>1 ano</value>
+  </data>
+  <data name="Yesterday" xml:space="preserve">
+    <value>ontem</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>Meu perfil</value>
+  </data>
+  <data name="Like" xml:space="preserve">
+    <value>Curtir</value>
+  </data>
+  <data name="Likes" xml:space="preserve">
+    <value>Curtis</value>
+    <comment>Curtidas?</comment>
+  </data>
+  <data name="Follower" xml:space="preserve">
+    <value>Seguidor</value>
+  </data>
+  <data name="Followers" xml:space="preserve">
+    <value>Seguidores</value>
+  </data>
+  <data name="Following" xml:space="preserve">
+    <value>Seguindo</value>
+  </data>
+  <data name="Followings" xml:space="preserve">
+    <value>Seguindo</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Vídeo</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="General" xml:space="preserve">
+    <value>Geral</value>
+  </data>
+  <data name="IChallengeYouTo" xml:space="preserve">
+    <value>Eu desafio você a</value>
+  </data>
+  <data name="Reward" xml:space="preserve">
+    <value>Prêmio</value>
+  </data>
+  <data name="SelectFriend" xml:space="preserve">
+    <value>Selecionar amigo</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="YourEmail" xml:space="preserve">
+    <value>Seu e-mail</value>
+  </data>
+  <data name="YourFullName" xml:space="preserve">
+    <value>Seu nome completo</value>
+  </data>
+  <data name="YourUsername" xml:space="preserve">
+    <value>Seu nome de usuário</value>
+  </data>
+  <data name="NewChallengeDescriptionExample" xml:space="preserve">
+    <value>Dançar na frente de estranhos</value>
+  </data>
+  <data name="NewChallengeRewardExample" xml:space="preserve">
+    <value>Uma bebida</value>
+  </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Arquivar</value>
+  </data>
+  <data name="People" xml:space="preserve">
+    <value>Pessoas</value>
+  </data>
+  <data name="Tags" xml:space="preserve">
+    <value>Marcadores</value>
+  </data>
+  <data name="ERROR_ALREADY_NOT_FOLLOWING" xml:space="preserve">
+    <value>Você não estava seguindo este usuário</value>
+  </data>
+  <data name="ChallengedYou" xml:space="preserve">
+    <value>Desafiou você</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Sobrenome</value>
+  </data>
+  <data name="NetworkError" xml:space="preserve">
+    <value>Falha na rede</value>
+  </data>
+  <data name="Mute" xml:space="preserve">
+    <value>Mute</value>
+  </data>
+  <data name="Unmute" xml:space="preserve">
+    <value>Ativar som</value>
+  </data>
+  <data name="Reputation" xml:space="preserve">
+    <value>Reputação</value>
+  </data>
+  <data name="YouWereChallenged" xml:space="preserve">
+    <value>Você foi desafiado!</value>
+  </data>
+  <data name="AcceptingChallenge" xml:space="preserve">
+    <value>Aceitando desafio</value>
+  </data>
+  <data name="RefusingChallenge" xml:space="preserve">
+    <value>Recusando desafio</value>
+  </data>
+  <data name="Uploading" xml:space="preserve">
+    <value>Enviando</value>
+  </data>
+  <data name="Saving" xml:space="preserve">
+    <value>Salvando</value>
+  </data>
+</root>

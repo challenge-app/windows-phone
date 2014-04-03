@@ -1,0 +1,91 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:ChallengeApp"
+    xmlns:Controls="clr-namespace:Coding4Fun.Toolkit.Controls;assembly=Coding4Fun.Toolkit.Controls"
+    xmlns:mec="clr-namespace:Microsoft.Expression.Controls;assembly=Microsoft.Expression.Controls"
+    x:Class="ChallengeApp.Main"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait" 
+	shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+	<ScrollViewer x:Name="LayoutRoot">
+		<ScrollViewer.Background>
+			<SolidColorBrush Color="{StaticResource AppBackgroundColor}"/>
+		</ScrollViewer.Background>
+		<StackPanel x:Name="ContentPanel" Margin="0">
+			<Border Margin="12" BorderThickness="2" BorderBrush="{StaticResource AppDiscretBackgroundBrush}">
+				<StackPanel Orientation="Vertical">
+					<Grid VerticalAlignment="Top" Margin="12,24">
+						<StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
+							<Grid Width="64" Height="64" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,12,0"><Rectangle Fill="#00000000" StrokeThickness="0" Stretch="UniformToFill"/>
+								<Grid>
+									<Path x:Name="path2" Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
+								</Grid>
+								<Image Source="/Assets/Avatar/brunolemos.jpg" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+							</Grid>
+							<Grid Width="64" Height="64" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,12,0"><Rectangle Fill="#00000000" StrokeThickness="0" Stretch="UniformToFill"/>
+								<Grid>
+									<Path x:Name="path1" Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
+								</Grid>
+								<Image Source="/Assets/Avatar/gadu.jpg" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+							</Grid>
+							<StackPanel>
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+									<TextBlock TextWrapping="Wrap" Text="BRUNOLEMOS" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Segoe WP Semibold"/>
+									<TextBlock TextWrapping="Wrap" Text=" vs " VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Segoe WP Semibold"/>
+									<TextBlock TextWrapping="Wrap" Text="ROD" VerticalAlignment="Top" HorizontalAlignment="Left" FontFamily="Segoe WP Semibold"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+									<TextBlock TextWrapping="Wrap" Text="há 1 hora" Foreground="{StaticResource AppDiscretForegroundBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,6,0"/>
+									<TextBlock TextWrapping="Wrap" Text="✔" Foreground="{StaticResource AppFlatGreenBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,6,0" Visibility="Collapsed"/>
+								</StackPanel>
+							</StackPanel>
+						</StackPanel>
+					</Grid>
+					<Grid MinWidth="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" MinHeight="{Binding ActualWidth, RelativeSource={RelativeSource Self}}" Margin="0,0,0,24" Visibility="Collapsed"><Rectangle Fill="#00000000" StrokeThickness="0" Stretch="UniformToFill"/>
+						<Grid>
+							
+							<Path x:Name="path" Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
+						</Grid>
+						<Image Source="/Assets/photo1.jpg" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+					</Grid>
+					<TextBlock Text="I challenge you to do that thing in 24h" Foreground="{StaticResource AppMainBrush}" FontFamily="Segoe WP Semibold" HorizontalAlignment="Left" VerticalAlignment="Top" LineHeight="28" ScrollViewer.HorizontalScrollBarVisibility="Auto" TextTrimming="WordEllipsis" TextWrapping="Wrap" FontSize="24" Margin="12,0,12,24"/>
+					<Grid Margin="0,0,0,24">
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
+							<StackPanel Margin="0,0,6,0">
+								<Controls:RoundToggleButton x:Name="LikeButton" VerticalAlignment="Top" HorizontalAlignment="Center" CheckedBrush="{StaticResource AppFlatGreenBrush}">
+									<Image Source="/Assets/Icons/like.png" Margin="6"/>
+								</Controls:RoundToggleButton>
+								<TextBlock TextWrapping="Wrap" Text="1k" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							</StackPanel>
+							<StackPanel Margin="0,0,6,0">
+								<Controls:RoundButton x:Name="CommentsButton" VerticalAlignment="Top" HorizontalAlignment="Center" PressedBrush="{StaticResource AppMainBrush}">
+									<Image Source="/ChallengeApp;component/Assets/Icons/comments.png" Margin="6"/>
+								</Controls:RoundButton>
+								<TextBlock TextWrapping="Wrap" Text="1k" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							</StackPanel>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top">
+							<StackPanel Margin="6,0,0,0">
+								<Controls:RoundButton x:Name="MoreButton" PressedBrush="{StaticResource AppMainBrush}" HorizontalAlignment="Right" VerticalAlignment="Top">
+									<Image Source="/ChallengeApp;component/Assets/Icons/dots_center.png"/>
+								</Controls:RoundButton>
+							</StackPanel>
+						</StackPanel>
+					</Grid>
+				</StackPanel>
+			</Border>
+		</StackPanel>
+
+	</ScrollViewer>
+
+</phone:PhoneApplicationPage>

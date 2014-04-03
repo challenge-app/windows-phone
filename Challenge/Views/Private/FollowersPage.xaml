@@ -1,0 +1,32 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="ChallengeApp.FollowersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource AppForegroundBrush}" 
+    shell:SystemTray.IsVisible="True"
+    shell:SystemTray.BackgroundColor="{StaticResource AppSystemTrayBackgroundColor}"
+    shell:SystemTray.ForegroundColor="{StaticResource AppSystemTrayForegroundColor}"
+    mc:Ignorable="d"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid x:Name="LayoutRoot" Margin="0, -1" Background="{StaticResource AppBackgroundBrush}">
+        <phone:Pivot x:Name="FollowersPivot" Title="{Binding UserObject.email, Converter={StaticResource UpperCaseConverter}}" Foreground="{StaticResource AppForegroundBrush}">
+            <phone:PivotItem Header="{Binding LocalizedResources.Followings, Source={StaticResource LocalizedStrings}, Converter={StaticResource LowerCaseConverter}}">
+                <ListBox x:Name="FollowingListBox" ItemTemplate="{StaticResource UserListTemplate}" ItemsSource="{Binding}" d:DataContext="{d:DesignData /SampleData/UsersSampleData.xaml}"/>
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="{Binding LocalizedResources.Followers, Source={StaticResource LocalizedStrings}, Converter={StaticResource LowerCaseConverter}}">
+                <ListBox x:Name="FollowersListBox" ItemTemplate="{StaticResource UserListTemplate}" ItemsSource="{Binding}" d:DataContext="{d:DesignData /SampleData/UsersSampleData.xaml}"/>
+            </phone:PivotItem>
+        </phone:Pivot>
+	</Grid>
+
+</phone:PhoneApplicationPage>

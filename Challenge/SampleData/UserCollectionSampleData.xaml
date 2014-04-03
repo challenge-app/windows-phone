@@ -1,0 +1,92 @@
+﻿<Models:Users xmlns:Models="clr-namespace:ChallengeApp.Models">
+	<Models:User authToken="Mauris vestibulum adipiscing aliquam class" email="Parturient curabitur" id="Maecenas aenean" password="Nam cras curae">
+		<Models:User.friends>
+			<Models:User authToken="Phasellus aptent donec" email="Duis etiam integer auctor consequat" id="Nullam sed" password="Praesent dis convallis quisque vivamus"/>
+			<Models:User authToken="Nunc dignissim accumsan vestibulum" email="Cursus dictum vestibulum" id="Congue fusce" password="Elementum adipiscing aliquam lorem"/>
+			<Models:User authToken="Hac lectus" email="Fringilla leo" id="Parturient facilisis est fermentum bibendum" password="Libero dictumst morbi habitasse aliquet"/>
+			<Models:User authToken="Proin nec vestibulum eleifend facilisi" email="Augue ligula" id="Hendrerit himenaeos imperdiet nulla mus" password="Litora vestibulum faucibus adipiscing"/>
+			<Models:User authToken="Inceptos malesuada penatibus" email="Fames interdum amet" id="Habitant dolor blandit parturient commodo" password="Porttitor felis tincidunt luctus"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Nascetur non conubia tristique" email="Ipsum justo per" id="Magnis vestibulum mattis lobortis" password="Ante lacus cubilia">
+		<Models:User.friends>
+			<Models:User authToken="Arcu placerat mollis ultricies" email="Vestibulum adipiscing sem parturient vestibulum" id="Lorem pharetra mauris sed" password="Vestibulum magna diam eget"/>
+			<Models:User authToken="Egestas adipiscing enim parturient" email="Curabitur erat" id="Dapibus venenatis elit vulputate" password="Montes massa euismod"/>
+			<Models:User authToken="Eros sit vel pulvinar" email="Sagittis nibh nisi nam" id="Feugiat gravida nostra" password="Senectus sed iaculis lacinia"/>
+			<Models:User authToken="Natoque nunc dis" email="Ornare metus odio phasellus" id="Sociosqu nisl laoreet" password="Consequat convallis morbi"/>
+			<Models:User authToken="Vestibulum platea netus" email="Primis potenti pretium suscipit vestibulum" id="Orci neque posuere" password="Nulla rutrum"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Est sapien semper sodales" email="Purus ultrices" id="Rhoncus porta torquent pede" password="Vehicula adipiscing">
+		<Models:User.friends>
+			<Models:User authToken="Taciti velit vitae tellus viverra" email="Dignissim aliquam mus quis" id="Hac sociis leo quam risus" password="Volutpat nec non urna tempor"/>
+			<Models:User authToken="Per accumsan parturient bibendum" email="Class curae dictumst elementum eleifend" id="Maecenas cras praesent integer" password="Vestibulum sed donec vestibulum"/>
+			<Models:User authToken="Sem sit vel vivamus" email="Nam sed" id="Etiam tempus duis fusce quisque" password="Facilisis fermentum lorem aliquam"/>
+			<Models:User authToken="Tortor parturient vestibulum turpis" email="Nulla faucibus" id="Dis morbi adipiscing facilisi" password="Est vestibulum habitant"/>
+			<Models:User authToken="Lobortis nascetur aliquet hac leo" email="Mus nec pharetra" id="Inceptos nunc interdum adipiscing fringilla" password="Varius blandit placerat"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Non amet habitasse" email="Mauris vestibulum proin" id="Parturient vestibulum aenean" password="Adipiscing per nullam parturient">
+		<Models:User.friends>
+			<Models:User authToken="Augue aptent" email="Dolor fames" id="Hendrerit commodo conubia ante" password="Sed vestibulum"/>
+			<Models:User authToken="Arcu himenaeos dapibus" email="Pulvinar auctor congue imperdiet" id="Sem cubilia vestibulum sit" password="Cursus malesuada"/>
+			<Models:User authToken="Porttitor sagittis senectus parturient sociosqu" email="Felis suscipit diam dictum" id="Egestas penatibus euismod adipiscing" password="Feugiat vestibulum ipsum vestibulum"/>
+			<Models:User authToken="Tincidunt adipiscing" email="Lorem lectus magna torquent" id="Justo lacus" password="Eget vel ultrices massa gravida"/>
+			<Models:User authToken="Sed morbi ultricies iaculis lacinia" email="Vehicula libero dis ligula elit" id="Parturient nam metus tristique" password="Enim venenatis volutpat neque"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Litora erat" email="Laoreet natoque vulputate eros" id="Maecenas netus" password="Luctus nibh nisi posuere praesent">
+		<Models:User.friends>
+			<Models:User authToken="Magnis potenti curabitur bibendum" email="Mattis dictumst" id="Vestibulum accumsan est" password="Pretium mauris eleifend rhoncus mollis"/>
+			<Models:User authToken="Nulla hac phasellus montes" email="Facilisi leo parturient mus consequat" id="Vestibulum adipiscing" password="Sodales faucibus nec convallis"/>
+			<Models:User authToken="Non nostra" email="Ornare platea" id="Vestibulum viverra porta vestibulum" password="Dignissim habitant adipiscing"/>
+			<Models:User authToken="Elementum sed primis vestibulum" email="Nisl adipiscing" id="Per parturient vestibulum" password="Nunc odio orci"/>
+			<Models:User authToken="Parturient facilisis" email="Inceptos vestibulum" id="Purus sem" password="Aliquam sit pede interdum integer"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Vel fringilla quisque" email="Adipiscing rutrum" id="Fermentum vestibulum" password="Vivamus sapien semper parturient sociis">
+		<Models:User.friends>
+			<Models:User authToken="Sed dis taciti aliquam" email="Aliquet est lobortis hendrerit" id="Habitasse nam" password="Tellus hac himenaeos"/>
+			<Models:User authToken="Risus blandit imperdiet tempus" email="Velit quam malesuada" id="Leo nascetur pharetra tempor" password="Vestibulum placerat vitae class"/>
+			<Models:User authToken="Turpis senectus mus" email="Porttitor commodo tincidunt nec" id="Tortor pulvinar sagittis penatibus" password="Conubia cubilia dapibus vestibulum non"/>
+			<Models:User authToken="Euismod curae tristique sed" email="Sem ultricies sit vel feugiat" id="Egestas per adipiscing" password="Venenatis donec nam vulputate quis"/>
+			<Models:User authToken="Parturient sed" email="Gravida iaculis" id="Urna sociosqu" password="Cras dis"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Lacinia nunc" email="Est etiam phasellus" id="Curabitur duis" password="Varius amet">
+		<Models:User.friends>
+			<Models:User authToken="Torquent laoreet natoque" email="Vestibulum aenean ultrices posuere" id="Fusce vestibulum suscipit consequat hac" password="Adipiscing lorem"/>
+			<Models:User authToken="Vestibulum vestibulum adipiscing mauris" email="Dignissim nullam aptent potenti" id="Convallis morbi nulla proin parturient" password="Pretium parturient elementum facilisis ante"/>
+			<Models:User authToken="Mus augue diam" email="Vestibulum auctor congue volutpat" id="Arcu vehicula vestibulum leo" password="Eget rhoncus cursus fermentum"/>
+			<Models:User authToken="Adipiscing maecenas parturient" email="Vestibulum dictum dolor fames sodales" id="Fringilla habitasse" password="Vestibulum lectus viverra nec non"/>
+			<Models:User authToken="Ligula felis ipsum" email="Accumsan elit adipiscing enim parturient" id="Praesent per aliquam libero" password="Integer litora"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Hendrerit bibendum vestibulum" email="Nibh adipiscing lacus dictumst lorem" id="Justo erat eros vestibulum quisque" password="Eleifend vivamus nisi parturient">
+		<Models:User.friends>
+			<Models:User authToken="Magna himenaeos aliquam" email="Aliquet nisl sed blandit" id="Facilisi vestibulum" password="Commodo sem"/>
+			<Models:User authToken="Vestibulum penatibus" email="Porttitor sit massa habitant" id="Imperdiet faucibus malesuada" password="Luctus adipiscing metus morbi tincidunt"/>
+			<Models:User authToken="Vel interdum vestibulum lobortis" email="Nam vestibulum adipiscing" id="Parturient inceptos" password="Magnis sed"/>
+			<Models:User authToken="Pharetra placerat dis" email="Parturient est neque conubia hac" id="Nunc nascetur" password="Mattis odio mauris vestibulum cubilia"/>
+			<Models:User authToken="Sagittis egestas leo vestibulum senectus" email="Adipiscing mus montes" id="Pulvinar netus mollis dapibus" password="Euismod tristique"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Suscipit non porta" email="Torquent feugiat gravida vulputate" id="Nec ultricies sociosqu nulla venenatis" password="Parturient ultrices vehicula iaculis">
+		<Models:User.friends>
+			<Models:User authToken="Curabitur nostra" email="Per maecenas ornare" id="Lacinia volutpat" password="Platea praesent primis orci"/>
+			<Models:User authToken="Sem laoreet natoque" email="Rutrum posuere" id="Accumsan sed bibendum" password="Pede dictumst phasellus potenti"/>
+			<Models:User authToken="Eleifend vestibulum" email="Sit vestibulum facilisi velit quam" id="Purus sapien risus" password="Vel vitae class pretium"/>
+			<Models:User authToken="Rhoncus sociis taciti" email="Tellus etiam adipiscing sodales" id="Nam consequat curae semper donec" password="Sed fusce viverra"/>
+			<Models:User authToken="Urna integer parturient habitant dis" email="Quisque tempor dignissim" id="Quis aliquam convallis faucibus" password="Elementum facilisis tempus vestibulum"/>
+		</Models:User.friends>
+	</Models:User>
+	<Models:User authToken="Vestibulum tortor vivamus morbi" email="Fermentum turpis nulla cras fringilla" id="Lorem inceptos" password="Est hac interdum">
+		<Models:User.friends>
+			<Models:User authToken="Nunc lobortis" email="Augue nascetur amet" id="Proin adipiscing aliquam duis" password="Parturient leo"/>
+			<Models:User authToken="Aliquet blandit vestibulum fames commodo" email="Vestibulum nec himenaeos adipiscing" id="Mus dolor habitasse hendrerit pharetra" password="Imperdiet placerat varius aenean parturient"/>
+			<Models:User authToken="Ipsum mauris" email="Justo sagittis" id="Malesuada vestibulum pulvinar felis" password="Senectus sociosqu suscipit"/>
+			<Models:User authToken="Aptent non" email="Per conubia cubilia dapibus" id="Torquent nullam vestibulum lacus" password="Ante sed penatibus arcu auctor"/>
+			<Models:User authToken="Lorem sem tristique eget elit" email="Enim sit congue adipiscing egestas" id="Porttitor tincidunt diam" password="Cursus dictum"/>
+		</Models:User.friends>
+	</Models:User>
+</Models:Users>
