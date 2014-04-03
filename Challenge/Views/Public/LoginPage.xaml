@@ -21,7 +21,7 @@
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     local:TiltEffect.IsTiltEnabled="True">
 	
-    <Grid x:Name="LayoutRoot" Margin="0,-1" Background="#FFF1C40F">
+    <Grid x:Name="LayoutRoot" Margin="0,-1" Background="{StaticResource AppMainBrush}">
         <Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="*"/>
@@ -42,32 +42,32 @@
 <!--<Image Source="/Assets/Logo.png" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,20"/>-->
                 
 				<Image HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Source="/Assets/Logo.png" Grid.Row="0"/>
-				<phone:Pivot Title="pivot" DataContext="{Binding MenuIcons}" Grid.Row="1" Margin="0,48,0,0" Foreground="{StaticResource AppForegroundBrush}">
-					<phone:Pivot.TitleTemplate>
-						<DataTemplate/>
-					</phone:Pivot.TitleTemplate>
+                <phone:Pivot x:Name="MainPivot" Title="pivot" DataContext="{Binding MenuIcons}" Grid.Row="1" Margin="0,48,0,0" Foreground="{StaticResource AppForegroundBrush}" SelectionChanged="MainPivot_SelectionChanged">
+                    <phone:Pivot.TitleTemplate>
+                        <DataTemplate/>
+                    </phone:Pivot.TitleTemplate>
 
-					<phone:Pivot.HeaderTemplate>
-						<DataTemplate>
-							<StackPanel Orientation="Horizontal">
+                    <phone:Pivot.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding MenuIcon, Converter={StaticResource LowerCaseConverter}, ElementName=RootElement}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
                                 <TextBlock Text="{Binding Converter={StaticResource LowerCaseConverter}}" FontSize="{StaticResource PhoneFontSizeExtraLarge}"/>
-							</StackPanel>
-						</DataTemplate>
-					</phone:Pivot.HeaderTemplate>
+                            </StackPanel>
+                        </DataTemplate>
+                    </phone:Pivot.HeaderTemplate>
 
-					<phone:PivotItem Header="{Binding LocalizedResources.Login, Source={StaticResource LocalizedStrings}}" DataContext="{Binding MenuIcons}" Margin="12,12,12,0">
-						<StackPanel x:Name="LoginArea" Orientation="Vertical">
+                    <phone:PivotItem Tag="login" Header="{Binding LocalizedResources.Login, Source={StaticResource LocalizedStrings}}" DataContext="{Binding MenuIcons}" Margin="12,12,12,0">
+                        <StackPanel x:Name="LoginArea" Orientation="Vertical">
 
                             <toolkit:PhoneTextBox x:Name="LoginUsernameInput" Hint="{Binding LocalizedResources.Username, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="LoginUsernameInput_KeyDown"/>
                             <toolkit:PhoneTextBox x:Name="LoginPasswordInput" InputScope="Password" Hint="{Binding LocalizedResources.Password, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="LoginPasswordInput_KeyDown" />
-							<local:MyButton x:Name="LoginSubmitButton" Content="{Binding LocalizedResources.Login, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="LoginButton_Click" BorderBrush="{x:Null}" Foreground="{StaticResource AppForegroundBrush}" Background="{StaticResource AppFlatGreenBrush}"/>
-						</StackPanel>
-					</phone:PivotItem>
+                            <local:MyButton x:Name="LoginSubmitButton" Content="{Binding LocalizedResources.Login, Source={StaticResource LocalizedStrings}}" Click="LoginButton_Click" Foreground="{StaticResource AppForegroundBrush}" Background="{StaticResource AppFlatGreenBrush}"/>
+                        </StackPanel>
+                    </phone:PivotItem>
 
-					<phone:PivotItem Header="{Binding LocalizedResources.CreateAccount, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0">
-						<StackPanel x:Name="CreateAccountArea" Orientation="Vertical">
-							<Grid Height="Auto">
+                    <phone:PivotItem Tag="createAccount" Header="{Binding LocalizedResources.CreateAccount, Source={StaticResource LocalizedStrings}}" Margin="12,12,12,0">
+                        <StackPanel x:Name="CreateAccountArea" Orientation="Vertical">
+                            <!--<Grid Height="Auto">
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition/>
 									<ColumnDefinition/>
@@ -75,48 +75,16 @@
                                 
 								<toolkit:PhoneTextBox x:Name="CreateFirstNameInput" Hint="{Binding LocalizedResources.FirstName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="CreateFirstNameInput_KeyDown" Grid.Row="0" Margin="0,0,-9,-18"/>
 								<toolkit:PhoneTextBox x:Name="CreateLastNameInput" Hint="{Binding LocalizedResources.LastName, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="CreateLastNameInput_KeyDown" Grid.Column="1" Margin="-9,0,0,-18"/>
-							</Grid>
-               
-							<toolkit:PhoneTextBox x:Name="CreateUsernameInput" Hint="{Binding LocalizedResources.Username, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="CreateLoginInput_KeyDown"/>
-							<toolkit:PhoneTextBox x:Name="CreatePasswordInput" InputScope="Password" Hint="{Binding LocalizedResources.Password, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="CreatePasswordInput_KeyDown" />
-                            <local:MyButton x:Name="CreateAccountSubmitButton" Content="{Binding LocalizedResources.CreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Click="CreateAccountButton_Click" Margin="-1,0,1,0" BorderBrush="{x:Null}" Foreground="{StaticResource AppForegroundBrush}" Background="{StaticResource AppFlatGreenBrush}"/>
+							</Grid>-->
 
+                            <toolkit:PhoneTextBox x:Name="CreateUsernameInput" Hint="{Binding LocalizedResources.Username, Source={StaticResource LocalizedStrings}}" KeyDown="CreateLoginInput_KeyDown"/>
+                            <toolkit:PhoneTextBox x:Name="CreatePasswordInput" InputScope="Password" Hint="{Binding LocalizedResources.Password, Source={StaticResource LocalizedStrings}}" KeyDown="CreatePasswordInput_KeyDown" />
+                            <toolkit:PhoneTextBox x:Name="CreateEmailInput" Hint="{Binding LocalizedResources.Email, Source={StaticResource LocalizedStrings}}" KeyDown="CreateEmailInput_KeyDown" />
+                            <local:MyButton x:Name="CreateAccountSubmitButton" Content="{Binding LocalizedResources.CreateAccount, Source={StaticResource LocalizedStrings}}" Click="CreateAccountButton_Click" Foreground="{StaticResource AppForegroundBrush}" Background="{StaticResource AppFlatGreenBrush}"/>
                         </StackPanel>
-					</phone:PivotItem>
-				</phone:Pivot>
-				<!--<Image Source="/Assets/Logo.png" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,20"/>-->
-                
-				<Grid Visibility="Collapsed">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*"/>
-						<ColumnDefinition Width="*"/>
-					</Grid.ColumnDefinitions>
-
-					<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="150" Grid.ColumnSpan="2">
-						<Viewbox HorizontalAlignment="Center" Margin="6,0,0,0" Width="120">
-							<Controls:RoundButton x:Name="FacebookLoginButton" BorderBrush="{StaticResource AppDiscretBackgroundBrush}" Click="FacebookLoginButton_Click" Margin="0,12,0,0" PressedBrush="#FF3B5998">
-								<ContentControl Margin="24" Style="{StaticResource FacebookIcon}"/>
-							</Controls:RoundButton>
-						</Viewbox>
-						<Rectangle Fill="{StaticResource AppFlatBlueBrush}" Stroke="Black" Width="1" Margin="12,0" StrokeThickness="0" VerticalAlignment="Center" Height="48"/>
-                        
-						<Viewbox HorizontalAlignment="Center" Margin="6,0,0,0" Width="120">
-                            <Controls:RoundToggleButton x:Name="CreateAccountButton" CheckedBrush="{StaticResource AppFlatBlueBrush}" BorderBrush="{StaticResource AppDiscretBackgroundBrush}" Margin="0,12,0,0" IsChecked="{Binding IsCreateAccountOption, Mode=TwoWay}">
-                                <ContentControl Margin="24" Style="{StaticResource AddUserIcon}"/>
-							</Controls:RoundToggleButton>
-						</Viewbox>
-                        
-						<Viewbox HorizontalAlignment="Center" Margin="6,0,0,0" Width="120">
-                            <Controls:RoundToggleButton x:Name="LoginButton" CheckedBrush="{StaticResource AppFlatBlueBrush}" BorderBrush="{StaticResource AppDiscretBackgroundBrush}" Margin="0,12,0,0" IsChecked="{Binding IsLoginOption, Mode=TwoWay}">
-                                <ContentControl Margin="24" Style="{StaticResource KeyIcon}"/>
-							</Controls:RoundToggleButton>
-						</Viewbox>
-					</StackPanel>
-
-					<!--<local:MyButton x:Name="CreateAccountButton" Grid.Column="0" Content="{Binding LocalizedResources.CreateAccount, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Tap="CreateAccountButton_Click" />
-					<local:MyButton x:Name="LoginButton" Grid.Column="1" Content="{Binding LocalizedResources.Login, Mode=OneWay, Source={StaticResource LocalizedStrings}}" Tap="LoginButton_Click"/>-->
-				</Grid>
-			</Grid>
+                    </phone:PivotItem>
+                </phone:Pivot>
+            </Grid>
 		</Grid>
 	</Grid>
 

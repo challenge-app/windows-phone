@@ -180,7 +180,7 @@ namespace ChallengeApp.Controllers
             if (handler != null) handler(this, EventArgs.Empty);
         }
 
-        public void CreateAccount(string email, string password)
+        public void CreateAccount(string email, string username, string password)
         {
             if (asyncHandle != null) asyncHandle.Abort();
 
@@ -191,6 +191,7 @@ namespace ChallengeApp.Controllers
 
             var request = new RestRequest(URL_CREATE_USER, Method.POST);
             request.AddParameter("email", email);
+            request.AddParameter("username", username);
             request.AddParameter("password", password);
 
             Debug.WriteLine("Creating account...");

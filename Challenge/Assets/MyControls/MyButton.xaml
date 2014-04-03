@@ -9,11 +9,11 @@
 	
 	<Button.Style>
 		<Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
-			<Setter Property="Background" Value="Transparent"/>
-			<Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+			<Setter Property="Background" Value="{StaticResource AppDiscretBackgroundBrush}"/>
 			<Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
-			<Setter Property="BorderThickness" Value="{StaticResource PhoneBorderThickness}"/>
-			<Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
+			<Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="{StaticResource PhoneForegroundBrush}"/>
+            <Setter Property="FontFamily" Value="{StaticResource PhoneFontFamilySemiBold}"/>
 			<Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>
 			<Setter Property="Template">
 				<Setter.Value>

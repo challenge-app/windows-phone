@@ -54,7 +54,7 @@
         <Color x:Key="AppLinkColor">White</Color>
         <SolidColorBrush x:Key="AppLinkBrush" Color="{StaticResource AppLinkColor}" />
 
-        <Color x:Key="AppDiscretBackgroundColor">#0EFFFFFF</Color><!--33000000-->
+        <Color x:Key="AppDiscretBackgroundColor">#1EFFFFFF</Color><!--33000000-->
     	<SolidColorBrush x:Key="AppDiscretBackgroundBrush" Color="{StaticResource AppDiscretBackgroundColor}" />
         
     	<Color x:Key="AppDiscretForegroundColor">#77FFFFFF</Color><!--FFE0E0E0-->
