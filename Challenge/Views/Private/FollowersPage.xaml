@@ -18,7 +18,7 @@
     DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <Grid x:Name="LayoutRoot" Margin="0, -1" Background="{StaticResource AppBackgroundBrush}">
-        <phone:Pivot x:Name="FollowersPivot" Title="{Binding UserObject.email, Converter={StaticResource UpperCaseConverter}}" Foreground="{StaticResource AppForegroundBrush}">
+        <phone:Pivot x:Name="FollowersPivot" Title="{Binding UserObject.username, Converter={StaticResource UpperCaseConverter}}" Foreground="{StaticResource AppForegroundBrush}">
             <phone:PivotItem Header="{Binding LocalizedResources.Followings, Source={StaticResource LocalizedStrings}, Converter={StaticResource LowerCaseConverter}}">
                 <ListBox x:Name="FollowingListBox" ItemTemplate="{StaticResource UserListTemplate}" ItemsSource="{Binding}" d:DataContext="{d:DesignData /SampleData/UsersSampleData.xaml}"/>
             </phone:PivotItem>

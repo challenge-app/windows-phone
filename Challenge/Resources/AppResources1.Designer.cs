@@ -88,6 +88,15 @@ namespace ChallengeApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add some friends.
+        /// </summary>
+        public static string AddSomeFriends {
+            get {
+                return ResourceManager.GetString("AddSomeFriends", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to a minute ago.
         /// </summary>
         public static string AMinuteAgo {
@@ -129,6 +138,15 @@ namespace ChallengeApp.Resources {
         public static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Challenge a friend.
+        /// </summary>
+        public static string ChallengeAFriend {
+            get {
+                return ResourceManager.GetString("ChallengeAFriend", resourceCulture);
             }
         }
         
@@ -196,6 +214,24 @@ namespace ChallengeApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your feed is empty, what about add some friends?.
+        /// </summary>
+        public static string EmptyFeedMessage {
+            get {
+                return ResourceManager.GetString("EmptyFeedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No notifications by now, what about challenge a friend?.
+        /// </summary>
+        public static string EmptyNotificationsMessage {
+            get {
+                return ResourceManager.GetString("EmptyNotificationsMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You are already following this user.
         /// </summary>
         public static string ERROR_ALREADY_FOLLOWING {
@@ -210,6 +246,15 @@ namespace ChallengeApp.Resources {
         public static string ERROR_ALREADY_NOT_FOLLOWING {
             get {
                 return ResourceManager.GetString("ERROR_ALREADY_NOT_FOLLOWING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please fill at least one field.
+        /// </summary>
+        public static string ERROR_AT_LEAST_ONE_FIELD {
+            get {
+                return ResourceManager.GetString("ERROR_AT_LEAST_ONE_FIELD", resourceCulture);
             }
         }
         

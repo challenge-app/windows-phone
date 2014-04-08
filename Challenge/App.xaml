@@ -21,10 +21,16 @@
         <utils:FriendlyTimeDescriptionConverter x:Key="FriendlyTimeDescriptionConverter"/>
         <utils:NullableToVisibilityConverter x:Key="NullableToVisibilityConverter"/>
 
-        <Color x:Key="AppMainColor">#FFF1C40F</Color><!--FF2B5B83-->
+        <Color x:Key="AppMainColor">#FFDCA922</Color>
         <SolidColorBrush x:Key="AppMainBrush" Color="{StaticResource AppMainColor}" />
 
-        <Color x:Key="AppSystemTrayBackgroundColor">#FF35353F</Color><!--FF2B5B83-->
+        <Color x:Key="AppBackgroundColor">#FF35353F</Color>
+        <SolidColorBrush x:Key="AppBackgroundBrush" Color="{StaticResource AppBackgroundColor}" />
+
+        <Color x:Key="AppForegroundColor">White</Color>
+        <SolidColorBrush x:Key="AppForegroundBrush" Color="{StaticResource AppForegroundColor}" />
+
+        <Color x:Key="AppSystemTrayBackgroundColor">#FF35353F</Color>
         <SolidColorBrush x:Key="AppSystemTrayBackgroundBrush" Color="{StaticResource AppSystemTrayBackgroundColor}" />
 
         <Color x:Key="AppSystemTrayForegroundColor">#FEFFFFFF</Color>
@@ -33,14 +39,8 @@
         <Color x:Key="AppBarBackgroundColor">#FF35353F</Color>
         <SolidColorBrush x:Key="AppBarBackgroundBrush" Color="{StaticResource AppBarBackgroundColor}" />
 
-        <Color x:Key="AppBarForegroundColor">#FFF1C40F</Color>
+        <Color x:Key="AppBarForegroundColor">White</Color>
         <SolidColorBrush x:Key="AppBarForegroundBrush" Color="{StaticResource AppBarForegroundColor}" />
-
-        <Color x:Key="AppBackgroundColor">#FF35353F</Color>
-        <SolidColorBrush x:Key="AppBackgroundBrush" Color="{StaticResource AppBackgroundColor}" />
-
-        <Color x:Key="AppForegroundColor">White</Color>
-        <SolidColorBrush x:Key="AppForegroundBrush" Color="{StaticResource AppForegroundColor}" />
 
         <!--<Color x:Key="AppConfigBackgroundColor">#FFd8dcdf</Color>
         <SolidColorBrush x:Key="AppConfigBackgroundBrush" Color="{StaticResource AppConfigBackgroundColor}" />
@@ -54,10 +54,10 @@
         <Color x:Key="AppLinkColor">White</Color>
         <SolidColorBrush x:Key="AppLinkBrush" Color="{StaticResource AppLinkColor}" />
 
-        <Color x:Key="AppDiscretBackgroundColor">#1EFFFFFF</Color><!--33000000-->
+        <Color x:Key="AppDiscretBackgroundColor">#FF212127</Color><!--33000000-->
     	<SolidColorBrush x:Key="AppDiscretBackgroundBrush" Color="{StaticResource AppDiscretBackgroundColor}" />
-        
-    	<Color x:Key="AppDiscretForegroundColor">#77FFFFFF</Color><!--FFE0E0E0-->
+
+        <Color x:Key="AppDiscretForegroundColor">#FF3E3E48</Color><!--FFE0E0E0-->
     	<SolidColorBrush x:Key="AppDiscretForegroundBrush" Color="{StaticResource AppDiscretForegroundColor}" />
 
         <Color x:Key="AppFlatRedColor">#FFe74c3c</Color>
@@ -303,8 +303,8 @@
         </Style>
 
         <DataTemplate x:Key="FeedTemplate">
-            <Border BorderThickness="2" BorderBrush="{StaticResource AppDiscretBackgroundBrush}" Margin="12,0,12,12">
-                <StackPanel Orientation="Vertical">
+            <!--<Border BorderThickness="2" BorderBrush="{StaticResource AppDiscretBackgroundBrush}" Margin="12,0,12,12">-->
+                <StackPanel Orientation="Vertical" Margin="12,0,12,6">
                     <Grid VerticalAlignment="Top" Margin="12,24">
                         <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Orientation="Horizontal">
                             <Grid DataContext="{Binding challenge.sender}" Tap="UserProfileClick" Width="64" Height="64" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,12,0">
@@ -312,7 +312,7 @@
                                 <Grid>
                                     <Path Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
                                 </Grid>
-                                <Image Source="{Binding email, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                                <Image Source="{Binding username, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                             </Grid>
 
                             <Grid DataContext="{Binding challenge.receiver}" Tap="UserProfileClick" Width="64" Height="64" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,12,0">
@@ -320,14 +320,14 @@
                                 <Grid>
                                     <Path Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
                                 </Grid>
-                                <Image Source="{Binding email, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                                <Image Source="{Binding username, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                             </Grid>
                             
                             <StackPanel>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding challenge.sender.email, Converter={StaticResource UpperCaseConverter}}" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="SemiBold"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding challenge.sender.username, Converter={StaticResource UpperCaseConverter}}" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="SemiBold"/>
                                     <TextBlock TextWrapping="Wrap" Text=" vs " VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="SemiBold"/>
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding challenge.receiver.email, Converter={StaticResource UpperCaseConverter}}" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="SemiBold"/>
+                                    <TextBlock TextWrapping="Wrap" Text="{Binding challenge.receiver.username, Converter={StaticResource UpperCaseConverter}}" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="SemiBold"/>
                                 </StackPanel>
                                 
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -368,12 +368,14 @@
                             </StackPanel>
                         </StackPanel>
                     </Grid>
+
+					<Rectangle Height="3" Fill="{StaticResource AppDiscretBackgroundBrush}" Margin="0,0,0,6"/>
                 </StackPanel>
-            </Border>
+            <!--</Border>-->
         </DataTemplate>
 
         <DataTemplate x:Name="NotificationsTemplate">
-            <Border BorderThickness="2" BorderBrush="{StaticResource AppDiscretBackgroundBrush}" Margin="12,0,12,-2">
+            <Border BorderBrush="{StaticResource AppDiscretBackgroundBrush}" Margin="12,0,12,12">
                 <Grid VerticalAlignment="Top" Margin="12">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -386,14 +388,14 @@
                         <Grid>
                             <Path Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
                         </Grid>
-                        <Image Source="{Binding email, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                        <Image Source="{Binding username, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                     </Grid>
 
                     <StackPanel Grid.Column="1" Orientation="Vertical" Tap="ChallengeClick">
                         <Grid>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="{StaticResource AppForegroundBrush}">
-                                    <Run Text="{Binding sender.email}"/>
+                                    <Run Text="{Binding sender.username}"/>
                                     <Run Text=""/>
                                 </TextBlock>
 
@@ -420,15 +422,22 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Grid DataContext="{Binding}" Tap="UserProfileClick" Width="64" Height="64" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,12,0">
+                <Grid DataContext="{Binding}" Tap="UserProfileClick" Width="64" Height="64" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,12,12,0" Grid.Column="0">
                     <Rectangle Fill="#00000000" StrokeThickness="0" Stretch="UniformToFill"/>
                     <Grid>
                         <Path Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
                     </Grid>
-                    <Image Source="{Binding email, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                    <Image Source="{Binding username, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                 </Grid>
+                <StackPanel Grid.Column="1" Orientation="Vertical" Margin="0,12,0,0">
 
-                <TextBlock Grid.Column="1" Margin="0,12" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Text="{Binding email}" Foreground="{StaticResource AppForegroundBrush}" Tap="UserProfileClick"/>
+                	<TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="{StaticResource AppForegroundBrush}" Tap="UserProfileClick" FontSize="{StaticResource PhoneFontSizeMediumLarge}" Visibility="{Binding firstName, Converter={StaticResource NullableToVisibilityConverter}}">
+                		<Run Text="{Binding firstName}"/>
+						<Run Text="{Binding lastName}"/>
+					</TextBlock>
+
+                    <TextBlock Text="{Binding username}" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Foreground="{StaticResource AppForegroundBrush}" Tap="UserProfileClick" FontSize="{StaticResource PhoneFontSizeMedium}"/>
+                </StackPanel>
                 <local:FollowButton Grid.Column="2" Margin="0" DataContext="{Binding}" IsEnabled="True" HorizontalAlignment="Right" VerticalAlignment="Top"/>
             </Grid>
         </DataTemplate>
@@ -446,7 +455,7 @@
                     <Grid>
                         <Path Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
                     </Grid>
-                    <Image Source="{Binding email, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                    <Image Source="{Binding username, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                 </Grid>
 
                 <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,12,0">
@@ -455,7 +464,7 @@
                         <Run Text="{Binding lastName}"/>
                     </TextBlock>
                     
-                    <TextBlock Text="{Binding email}" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource AppDiscretForegroundBrush}"/>
+                    <TextBlock Text="{Binding username}" FontSize="{StaticResource PhoneFontSizeNormal}" Foreground="{StaticResource AppDiscretForegroundBrush}"/>
                 </StackPanel>
 
                 <Button Grid.Column="2" Content="Follow" Foreground="{StaticResource AppForegroundBrush}" />
@@ -471,10 +480,10 @@
                             <Grid>
                                 <Path Fill="{StaticResource AppDiscretBackgroundBrush}" Data="F1 M0,0 L240,0 L240,36 L0,36 L0,0 z M17.1429,3 L17.1429,33 L222.857,33 L222.857,3 L17.1429,3 z M40,31 L74.7617,24.3333 L92.8571,27.5 L165.238,14.8333 L192.381,19.5833 L211.429,16 L211.429,31 L40,31 z M74.7617,6.9167 C74.7617,10.4145 58.5589,13.25 38.5714,13.25 C35.4474,13.25 31.4634,13.1302 28.5714,13 L28.5714,5 L72.3806,5 C73.1246,5.5061 74.7617,6.3699 74.7617,6.9167 z" Grid.Column="1" Stretch="Fill" Grid.Row="1"/>
                             </Grid>
-                            <Image Source="{Binding email, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                            <Image Source="{Binding username, Converter={StaticResource UserToAvatarConverter}}" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                         </Grid>
 
-                        <TextBlock Text="{Binding email}" Margin="0,0,0,12" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Medium" Foreground="{StaticResource AppForegroundBrush}" HorizontalAlignment="Center" />
+                        <TextBlock Text="{Binding username}" Margin="0,0,0,12" FontSize="{StaticResource PhoneFontSizeLarge}" FontWeight="Medium" Foreground="{StaticResource AppForegroundBrush}" HorizontalAlignment="Center" />
 
                         <StackPanel Margin="0,0,0,12" Orientation="Horizontal" HorizontalAlignment="Center">
                             <TextBlock FontSize="{StaticResource PhoneFontSizeMedium}" Foreground="{StaticResource AppForegroundBrush}" TextAlignment="Center" Tap="FollowingClick">

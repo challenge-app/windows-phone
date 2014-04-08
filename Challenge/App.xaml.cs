@@ -63,10 +63,10 @@ namespace ChallengeApp
             // Phone-specific initialization
             InitializePhoneApplication();
 
-            //Resources.Remove("PhoneAccentColor");
-            //Resources.Add("PhoneAccentColor", Colors.White);
-            //((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = Colors.White;
-            //((SolidColorBrush)Resources["PhoneTextBoxEditBackgroundBrush"]).Color = Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF);
+            Resources.Remove("PhoneAccentColor");
+            Resources.Add("PhoneAccentColor", Colors.White);
+            ((SolidColorBrush)Resources["PhoneAccentBrush"]).Color = Colors.White;
+            ((SolidColorBrush)Resources["PhoneTextBoxEditBackgroundBrush"]).Color = Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF);
 
             // Language display initialization
             InitializeLanguage();

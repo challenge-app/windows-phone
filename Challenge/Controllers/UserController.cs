@@ -133,7 +133,7 @@ namespace ChallengeApp.Controllers
             return true;
         }
 
-        public void Login(string email, string password)
+        public void Login(string username, string password)
         {
             if (asyncHandle != null) asyncHandle.Abort();
             Logout(false);
@@ -144,7 +144,7 @@ namespace ChallengeApp.Controllers
             SystemTray.ProgressIndicator.Text = String.Format("{0}...", AppResources.LoggingIn);
 
             var request = new RestRequest(URL_DO_LOGIN, Method.POST);
-            request.AddParameter("email", email);
+            request.AddParameter("username", username);
             request.AddParameter("password", password);
 
             Debug.WriteLine("Logging in...");

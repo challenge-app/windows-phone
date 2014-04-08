@@ -47,7 +47,7 @@ namespace ChallengeApp.Controllers
             //settings.LoadedFeed = null;
         }
 
-        public async Task<List<FeedItem>> GetFeed(int limit = 10, int offset = 0)
+        public async Task<ObservableCollection<FeedItem>> GetFeed(int limit = 10, int offset = 0)
         {
             if (!UserController.IsLogged) return null;
 
@@ -56,7 +56,7 @@ namespace ChallengeApp.Controllers
             request.AddParameter("offset", offset);
 
             Debug.WriteLine("Getting logged user feed...");
-            var task = restClient.ExecuteTask<List<FeedItem>>(request);
+            var task = restClient.ExecuteTask<ObservableCollection<FeedItem>>(request);
             await task;
             Debug.WriteLine("Done.");
 
@@ -67,25 +67,25 @@ namespace ChallengeApp.Controllers
                 var content = t.Result;
                 //content = content.OrderByDescending(x => x.timestamp).ToList<FeedItem>();
 
-                List<FeedItem> Feed = new List<FeedItem>();
+                ObservableCollection<FeedItem> feed = new ObservableCollection<FeedItem>();
 
                 if (content != null)
                 {
                     foreach (var item in t.Result)
                     {
                         // remove repetido -> temporario enquanto o feed esta trazendo item repetido
-                        var repeatedItem = Feed.Where<FeedItem>(u => u.challenge.id == item.challenge.id && u.id != item.id).FirstOrDefault<FeedItem>();
+                        var repeatedItem = feed.Where<FeedItem>(u => u.challenge.id == item.challenge.id && u.id != item.id).FirstOrDefault<FeedItem>();
                         if (repeatedItem != null)
                         {
-                            if ((item.type == 1 || item.type == 2) && repeatedItem.type == 0) Feed.Remove(repeatedItem);
+                            if ((item.type == 1 || item.type == 2) && repeatedItem.type == 0) feed.Remove(repeatedItem);
                             else if (item.type == 0 && (repeatedItem.type == 1 || repeatedItem.type == 2)) continue;
                         }
 
-                        Feed.Add(item);
+                        feed.Add(item);
                     }
 
                     //IsFeedLoaded = true;
-                    Result = Feed;
+                    Result = feed;
                 }
 
                 //settings.LoadedFeed = Feed.Cast<FeedItem>().ToList();

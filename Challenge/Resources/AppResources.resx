@@ -401,4 +401,19 @@
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
   </data>
+  <data name="AddSomeFriends" xml:space="preserve">
+    <value>Add some friends</value>
+  </data>
+  <data name="ChallengeAFriend" xml:space="preserve">
+    <value>Challenge a friend</value>
+  </data>
+  <data name="EmptyFeedMessage" xml:space="preserve">
+    <value>Your feed is empty, what about add some friends?</value>
+  </data>
+  <data name="EmptyNotificationsMessage" xml:space="preserve">
+    <value>No notifications by now, what about challenge a friend?</value>
+  </data>
+  <data name="ERROR_AT_LEAST_ONE_FIELD" xml:space="preserve">
+    <value>Please fill at least one field</value>
+  </data>
 </root>

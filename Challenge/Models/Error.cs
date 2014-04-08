@@ -7,7 +7,7 @@ namespace ChallengeApp.Models
     [DataContract]
     public class Error
     {
-        public const int MISSING_PARAMETER_EMAIL        = 1;
+        public const int MISSING_PARAMETER_USERNAME     = 1;
         public const int MISSING_PARAMETER_PASSWORD     = 2;
         public const int MISSING_PARAMETER_ID           = 3;
         public const int MISSING_PARAMETER_RECEIVERID   = 4;
@@ -34,6 +34,7 @@ namespace ChallengeApp.Models
         public const int MISSING_PARAMETER_LIMIT        = 25;
         public const int MISSING_PARAMETER_OFFSET       = 26;
         public const int ALREADY_NOT_FOLLOWING          = 27;
+        public const int AT_LEAST_ONE_FIELD     = 28;
 
         [DataMember(Name = "code")]
         public int code { get; private set; }
@@ -46,7 +47,7 @@ namespace ChallengeApp.Models
 
             switch (code)
             {
-                case MISSING_PARAMETER_EMAIL:       message = String.Format(AppResources.ERROR_MISSING_PARAMETER, "email");         break;
+                case MISSING_PARAMETER_USERNAME:    message = String.Format(AppResources.ERROR_MISSING_PARAMETER, "username");      break;
                 case MISSING_PARAMETER_PASSWORD:    message = String.Format(AppResources.ERROR_MISSING_PARAMETER, "password");      break;
                 case MISSING_PARAMETER_ID:          message = String.Format(AppResources.ERROR_MISSING_PARAMETER, "_id");           break;
                 case MISSING_PARAMETER_RECEIVERID:  message = String.Format(AppResources.ERROR_MISSING_PARAMETER, "receiverId");    break;
@@ -73,6 +74,7 @@ namespace ChallengeApp.Models
                 case CHALLENGE_YOURSELF:            message = AppResources.ERROR_CHALLENGE_YOURSELF;                                break;
                 case CHALLENGE_NOT_A_FOLLOWER:      message = AppResources.ERROR_CHALLENGE_NOT_A_FOLLOWER;                          break;
                 case ALREADY_NOT_FOLLOWING:         message = AppResources.ERROR_ALREADY_NOT_FOLLOWING;                             break;
+                case AT_LEAST_ONE_FIELD:            message = AppResources.ERROR_AT_LEAST_ONE_FIELD;                                break;
                 default:                            message = "Error code: " + code;                                                break;
             }
 

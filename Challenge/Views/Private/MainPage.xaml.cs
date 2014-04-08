@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows;
@@ -14,8 +16,14 @@ using ChallengeApp.Models;
 namespace ChallengeApp {
     public partial class MainPage : PhoneApplicationPage
     {
-        private bool isNotificationsLoaded = false;
         private bool isFeedLoaded = false;
+        private bool isNotificationsLoaded = false;
+
+        public ICollection<FeedItem> Feed { get { return (ICollection<FeedItem>)GetValue(feed); } set { SetValue(feed, value); } }
+        public static readonly DependencyProperty feed = DependencyProperty.Register("Feed", typeof(ICollection<FeedItem>), typeof(PhoneApplicationPage), new PropertyMetadata(null));
+
+        public ICollection<Challenge> Notifications { get { return (ICollection<Challenge>)GetValue(notifications); } set { SetValue(notifications, value); } }
+        public static readonly DependencyProperty notifications = DependencyProperty.Register("Notifications", typeof(ICollection<Challenge>), typeof(PhoneApplicationPage), new PropertyMetadata(null));
 
         // Constructor
         public MainPage()
@@ -26,7 +34,8 @@ namespace ChallengeApp {
             BuildLocalizedApplicationBar();
 
             // 
-            //this.FeedContent.ItemsSource = FeedController.Instance.Feed;
+            FeedContent.ItemsSource = Feed;
+            NotificationsContent.ItemsSource = Notifications;
 
             Loaded += Main_Loaded;
             Unloaded += Main_Unloaded;
@@ -68,33 +77,26 @@ namespace ChallengeApp {
             while (NavigationService.CanGoBack) NavigationService.RemoveBackEntry();
         }
 
-        private void Feed_ImageOpened(object sender, RoutedEventArgs e)
-        {
-            (sender as Image).Visibility = Visibility.Visible;
-        }
-
         private async void LoadFeed()
         {
             VisualStateManager.GoToState(this, "LoadingFeed", false);
 
-            var Feed = await FeedController.Instance.GetFeed();
-            FeedContent.ItemsSource = Feed;
+            Feed = await FeedController.Instance.GetFeed();
             isFeedLoaded = true;
 
             VisualStateManager.GoToState(this, "LoadedFeed", false);
-            VisualStateManager.GoToState(this, Feed.Count > 0 ? "HasFeed" : "EmptyFeed", false);
+            VisualStateManager.GoToState(this, Feed == null || Feed.Count <= 0 ? "EmptyFeed" : "HasFeed", false);
         }
 
         private async void LoadNotifications()
         {
             VisualStateManager.GoToState(this, "LoadingNotifications", false);
 
-            var Notifications = await ChallengeController.Instance.GetReceivedChallenges();
-            NotificationsContent.ItemsSource = Notifications;
+            Notifications = await ChallengeController.Instance.GetReceivedChallenges();
             isNotificationsLoaded = true;
 
             VisualStateManager.GoToState(this, "LoadedNotifications", false);
-            VisualStateManager.GoToState(this, Notifications.Count > 0 ? "HasNotifications" : "EmptyNotification", false);
+            VisualStateManager.GoToState(this, Notifications.Count > 0 ? "HasNotifications" : "EmptyNotifications", false);
         }
 
         // Building a localized ApplicationBar
@@ -118,15 +120,14 @@ namespace ChallengeApp {
             ApplicationBar.Buttons.Add(appBarButton);
 
             // Create a new button and set the text value to the localized string from AppResources.
-            appBarButton = new ApplicationBarIconButton(new Uri("/Assets/Icons/new.png", UriKind.Relative));
-            appBarButton.Text = AppResources.NewChallenge;
-            appBarButton.Click += appBarNewChallengeClick;
-            ApplicationBar.Buttons.Add(appBarButton);
-
             appBarButton = new ApplicationBarIconButton(new Uri("/Assets/Icons/search.png", UriKind.Relative));
             appBarButton.Text = AppResources.Search;
             appBarButton.Click += appBarSearchClick;
             ApplicationBar.Buttons.Add(appBarButton);
+
+            appBarMenuItem = new ApplicationBarMenuItem(AppResources.NewChallenge);
+            appBarMenuItem.Click += appBarNewChallengeClick;
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
 
             appBarMenuItem = new ApplicationBarMenuItem(AppResources.MyProfile);
             appBarMenuItem.Click += appBarMyProfileClick;
@@ -157,7 +158,6 @@ namespace ChallengeApp {
         {
             //if(FeedContent.SelectedIndex >= 0) FeedContent.DefaultItem = FeedContent.Items[FeedContent.SelectedIndex]; 
 
-            Debug.WriteLine((MainPivot.SelectedItem as PivotItem).Tag);
             switch ((MainPivot.SelectedItem as PivotItem).Tag.ToString())
             {
                 case "profile":
