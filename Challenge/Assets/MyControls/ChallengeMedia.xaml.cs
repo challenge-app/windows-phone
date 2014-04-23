@@ -9,6 +9,8 @@ using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
 
+using ChallengeApp.Models;
+
 namespace ChallengeApp
 {
     public partial class ChallengeMedia : UserControl

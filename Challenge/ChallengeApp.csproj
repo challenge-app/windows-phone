@@ -105,6 +105,12 @@
     <Compile Include="Assets\MyControls\MyButton.xaml.cs">
       <DependentUpon>MyButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Assets\MyControls\PathControl.xaml.cs">
+      <DependentUpon>PathControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\MyControls\SplitPanel.xaml.cs">
+      <DependentUpon>SplitPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ChallengeController.cs" />
@@ -183,6 +189,14 @@
     <Page Include="Assets\MyControls\MyButton.xaml">
       <Generator>MSBuild:MarkupCompilePass1</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Assets\MyControls\PathControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Assets\MyControls\SplitPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SampleData\ChallengeCollectionSampleData.xaml">
       <Generator>MSBuild:Compile</Generator>

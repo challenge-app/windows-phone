@@ -59,6 +59,7 @@ namespace ChallengeApp.Controllers
             var task = restClient.ExecuteTask<ObservableCollection<FeedItem>>(request);
             await task;
             Debug.WriteLine("Done.");
+            Debug.WriteLine("Result: " + task.Result.ToString());
 
             var Result = task.Result;
 

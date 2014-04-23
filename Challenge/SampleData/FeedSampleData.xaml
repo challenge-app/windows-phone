@@ -1,20 +1,4 @@
 ﻿<Models:Feed xmlns:Models="clr-namespace:ChallengeApp.Models">
-    <Models:FeedItem id="ID1" type="0" timestamp="0">
-        <Models:FeedItem.challenge>
-            <Models:Challenge doubts="92" id="ID1" likes="82" reward="14" status="0" timestamp="0" type="picture" url="">
-                <Models:Challenge.info>
-                    <Models:ChallengeBase difficulty="0" description="I challenge you to do that thing in 24h" id="ID" timestamp="0"/>
-                </Models:Challenge.info>
-                <Models:Challenge.sender>
-                    <Models:User id="ID" IsFollowing="True" email="brunolemos" firstName="bruno" lastName="lemos" username="brunolemos"/>
-                </Models:Challenge.sender>
-                <Models:Challenge.receiver>
-                    <Models:User id="ID" IsFollowing="True" email="rod" firstName="rodrigo" lastName="venancio" username="rod"/>
-                </Models:Challenge.receiver>
-            </Models:Challenge>
-        </Models:FeedItem.challenge>
-    </Models:FeedItem>
-    
     <Models:FeedItem id="ID" type="0" timestamp="0">
         <Models:FeedItem.challenge>
             <Models:Challenge doubts="720" id="ID" likes="3000" reward="90" status="1" timestamp="0" type="picture" url="/Assets/photo1.jpg">
@@ -23,6 +7,22 @@
                 </Models:Challenge.info>
                 <Models:Challenge.sender>
                     <Models:User id="ID" IsFollowing="True" email="mauricio" firstName="mauricio" lastName="giordano" username="mauricio"/>
+                </Models:Challenge.sender>
+                <Models:Challenge.receiver>
+                    <Models:User id="ID" IsFollowing="True" email="rod" firstName="rodrigo" lastName="venancio" username="rod"/>
+                </Models:Challenge.receiver>
+            </Models:Challenge>
+        </Models:FeedItem.challenge>
+    </Models:FeedItem>
+
+	    <Models:FeedItem id="ID1" type="0" timestamp="0">
+        <Models:FeedItem.challenge>
+            <Models:Challenge doubts="92" id="ID1" likes="82" reward="14" status="0" timestamp="0" type="picture" url="">
+                <Models:Challenge.info>
+                    <Models:ChallengeBase difficulty="0" description="I challenge you to do that thing in 24h" id="ID" timestamp="0"/>
+                </Models:Challenge.info>
+                <Models:Challenge.sender>
+                    <Models:User id="ID" IsFollowing="True" email="brunolemos" firstName="bruno" lastName="lemos" username="brunolemos"/>
                 </Models:Challenge.sender>
                 <Models:Challenge.receiver>
                     <Models:User id="ID" IsFollowing="True" email="rod" firstName="rodrigo" lastName="venancio" username="rod"/>

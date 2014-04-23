@@ -7,7 +7,7 @@
   </Languages>
   <!--Default ProductID   = {b5f8fc8b-6d6e-4853-82da-48227f9c5b60}
       Default PublisherID = {d35c58bb-09a4-4b38-9800-453e3d65a71f}-->
-  <App xmlns="" IsBeta="true" ProductID="{e7ad4e22-e824-4919-82e1-dea2d48a56a4}" Title="Challenge" RuntimeType="Silverlight" Version="0.6.0.0" Genre="apps.normal" Author="Bruno Lemos" Description="Desafie seus amigos a fazerem coisas estranhas! &#xD;&#xA;Curta o que fizerem através das fotos ou vídeos que mandarem!&#xD;&#xA;Seja o cara com maior reputação cumprindo o que for desafiado da forma mais original e engraçada possível. Que inicie a zueira!" Publisher="Challenge App" PublisherID="{ea0dd360-4b39-4f0f-8448-3a4327b8b59b}">
+  <App xmlns="" IsBeta="true" ProductID="{e7ad4e22-e824-4919-82e1-dea2d48a56a4}" Title="Challenge" RuntimeType="Silverlight" Version="0.7.0.0" Genre="apps.normal" Author="Bruno Lemos" Description="Desafie seus amigos a fazerem coisas estranhas! &#xD;&#xA;Curta o que fizerem através das fotos ou vídeos que mandarem!&#xD;&#xA;Seja o cara com maior reputação cumprindo o que for desafiado da forma mais original e engraçada possível. Que inicie a zueira!" Publisher="Challenge App" PublisherID="{ea0dd360-4b39-4f0f-8448-3a4327b8b59b}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />

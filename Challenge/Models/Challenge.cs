@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Diagnostics;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Microsoft.Phone.Controls;
@@ -36,7 +35,7 @@ namespace ChallengeApp.Models
 
         private string _url = "";
         [DataMember]
-        public string url { get { return _url.Replace("s3-website-us-east-1", "s3"); } set { _url = (type == "video" ? "http://download.wavetlan.com/SVV/Media/HTTP/H264/Talkinghead_Media/H264_test1_Talkinghead_mp4_480x360.mp4" : value); } }
+        public string url { get { return _url.Replace("s3-website-us-east-1", "s3"); } set { _url = value; } }
 
         [DataMember]
         public int reward { get; set; }

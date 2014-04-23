@@ -79,20 +79,22 @@ namespace ChallengeApp {
 
         private async void LoadFeed()
         {
-            VisualStateManager.GoToState(this, "LoadingFeed", false);
+            ICollection<FeedItem> Feed;
 
-            Feed = await FeedController.Instance.GetFeed();
+            VisualStateManager.GoToState(this, "LoadingFeed", false);
+            FeedContent.ItemsSource = Feed = await FeedController.Instance.GetFeed();
             isFeedLoaded = true;
 
             VisualStateManager.GoToState(this, "LoadedFeed", false);
-            VisualStateManager.GoToState(this, Feed == null || Feed.Count <= 0 ? "EmptyFeed" : "HasFeed", false);
+            VisualStateManager.GoToState(this, Feed.Count > 0 ? "HasFeed" : "EmptyFeed", false);
         }
 
         private async void LoadNotifications()
         {
-            VisualStateManager.GoToState(this, "LoadingNotifications", false);
+            ICollection<Challenge> Notifications;
 
-            Notifications = await ChallengeController.Instance.GetReceivedChallenges();
+            VisualStateManager.GoToState(this, "LoadingNotifications", false);
+            NotificationsContent.ItemsSource = Notifications = await ChallengeController.Instance.GetReceivedChallenges();
             isNotificationsLoaded = true;
 
             VisualStateManager.GoToState(this, "LoadedNotifications", false);

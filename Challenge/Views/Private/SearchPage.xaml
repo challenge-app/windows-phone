@@ -14,9 +14,7 @@
     Foreground="Black"
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
-    shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="{StaticResource AppMainColor}"
-    shell:SystemTray.ForegroundColor="{StaticResource AppBackgroundColor}"
+    shell:SystemTray.IsVisible="False"
 	d:DataContext="{d:DesignData /SampleData/UsersSampleData.xaml}">
 
     <phone:PhoneApplicationPage.Resources>
@@ -49,21 +47,21 @@
         </Grid.RowDefinitions>
 
         <Grid Background="{StaticResource AppMainBrush}">
-            <StackPanel Grid.Row="0" Margin="12,17,0,0">
-                <TextBlock Text="{Binding LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle3Style}" FontWeight="Bold" Foreground="{StaticResource AppBackgroundBrush}"/>
+            <StackPanel Grid.Row="0" Margin="12,17,12,0">
+                <TextBlock Text="{Binding LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextTitle3Style}" FontWeight="Bold" Foreground="{StaticResource AppForegroundBrush}"/>
                 <toolkit:PhoneTextBox x:Name="textBoxQuery" Hint="{Binding LocalizedResources.Search, Source={StaticResource LocalizedStrings}}" FontSize="{StaticResource PhoneFontSizeMedium}" FontWeight="Normal" KeyDown="textBoxQuery_KeyDown" Margin="0" />
             </StackPanel>
         </Grid>
 
-        <phone:Pivot Grid.Row="1" Foreground="{StaticResource AppBackgroundBrush}" Title="" Margin="0,-12,0,0">
+        <phone:Pivot Grid.Row="1" Foreground="{StaticResource AppForegroundBrush}" Title="" Margin="0,-12,0,0">
             <phone:Pivot.TitleTemplate>
                 <DataTemplate/>
             </phone:Pivot.TitleTemplate>
 
             <phone:Pivot.HeaderTemplate>
-                <DataTemplate/>
-                    <!--<TextBlock Text="{Binding Converter={StaticResource LowerCaseConverter}}" Margin="0,-9,0,12"/>
-                </DataTemplate>-->
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource LowerCaseConverter}}" Margin="0,-9,0,12"/>
+                </DataTemplate>
             </phone:Pivot.HeaderTemplate>
 
             <phone:PivotItem Header="{Binding LocalizedResources.People, Source={StaticResource LocalizedStrings}}" Margin="0">

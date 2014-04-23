@@ -16,7 +16,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="White"
     shell:SystemTray.IsVisible="True"
-	shell:SystemTray.ForegroundColor="{StaticResource AppBackgroundColor}"
+	shell:SystemTray.ForegroundColor="{StaticResource AppTransparentLightColor}"
     shell:SystemTray.Opacity="0"
     DataContext="{Binding RelativeSource={RelativeSource Self}}"
     local:TiltEffect.IsTiltEnabled="True">
@@ -42,7 +42,7 @@
 <!--<Image Source="/Assets/Logo.png" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,20"/>-->
                 
 				<Image HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Source="/Assets/Logo.png" Grid.Row="0"/>
-                <phone:Pivot x:Name="MainPivot" Title="pivot" DataContext="{Binding MenuIcons}" Grid.Row="1" Margin="0,48,0,0" Foreground="{StaticResource AppForegroundBrush}" SelectionChanged="MainPivot_SelectionChanged">
+                <phone:Pivot x:Name="MainPivot" Title="pivot" DataContext="{Binding MenuIcons}" Grid.Row="1" Margin="0,48,0,0" Foreground="White" SelectionChanged="MainPivot_SelectionChanged">
                     <phone:Pivot.TitleTemplate>
                         <DataTemplate/>
                     </phone:Pivot.TitleTemplate>
@@ -61,7 +61,7 @@
 
                             <toolkit:PhoneTextBox x:Name="LoginUsernameInput" Hint="{Binding LocalizedResources.Username, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="LoginUsernameInput_KeyDown"/>
                             <toolkit:PhoneTextBox x:Name="LoginPasswordInput" InputScope="Password" Hint="{Binding LocalizedResources.Password, Mode=OneWay, Source={StaticResource LocalizedStrings}}" KeyDown="LoginPasswordInput_KeyDown" />
-                            <local:MyButton x:Name="LoginSubmitButton" Content="{Binding LocalizedResources.Login, Source={StaticResource LocalizedStrings}}" Click="LoginButton_Click" Foreground="{StaticResource AppForegroundBrush}" Background="{StaticResource AppFlatGreenBrush}"/>
+                            <local:MyButton x:Name="LoginSubmitButton" Content="{Binding LocalizedResources.Login, Source={StaticResource LocalizedStrings}}" Click="LoginButton_Click" Foreground="White" Background="{StaticResource AppFlatGreenBrush}"/>
                         </StackPanel>
                     </phone:PivotItem>
 
@@ -80,7 +80,7 @@
                             <toolkit:PhoneTextBox x:Name="CreateUsernameInput" Hint="{Binding LocalizedResources.Username, Source={StaticResource LocalizedStrings}}" KeyDown="CreateLoginInput_KeyDown"/>
                             <toolkit:PhoneTextBox x:Name="CreatePasswordInput" InputScope="Password" Hint="{Binding LocalizedResources.Password, Source={StaticResource LocalizedStrings}}" KeyDown="CreatePasswordInput_KeyDown" />
                             <toolkit:PhoneTextBox x:Name="CreateEmailInput" Hint="{Binding LocalizedResources.Email, Source={StaticResource LocalizedStrings}}" KeyDown="CreateEmailInput_KeyDown" />
-                            <local:MyButton x:Name="CreateAccountSubmitButton" Content="{Binding LocalizedResources.CreateAccount, Source={StaticResource LocalizedStrings}}" Click="CreateAccountButton_Click" Foreground="{StaticResource AppForegroundBrush}" Background="{StaticResource AppFlatGreenBrush}"/>
+                            <local:MyButton x:Name="CreateAccountSubmitButton" Content="{Binding LocalizedResources.CreateAccount, Source={StaticResource LocalizedStrings}}" Click="CreateAccountButton_Click" Foreground="White" Background="{StaticResource AppFlatGreenBrush}"/>
                         </StackPanel>
                     </phone:PivotItem>
                 </phone:Pivot>

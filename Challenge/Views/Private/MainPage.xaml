@@ -10,16 +10,76 @@
 	xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
     xmlns:es="clr-namespace:Microsoft.Expression.Shapes;assembly=Microsoft.Expression.Drawing"
     xmlns:local="clr-namespace:ChallengeApp"
+    xmlns:utils="clr-namespace:ChallengeApp.Utils"
     mc:Ignorable="d"
 	x:Class="ChallengeApp.MainPage"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
     SupportedOrientations="Portrait" Orientation="Portrait" 
-    shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="{StaticResource AppDiscretBackgroundColor}"
-	shell:SystemTray.ForegroundColor="{StaticResource AppSystemTrayForegroundColor}"
-    DataContext="{Binding RelativeSource={RelativeSource Self}}"
-    local:TiltEffect.IsTiltEnabled="True">
-    
-	<Grid x:Name="LayoutRoot" Background="{StaticResource AppBackgroundBrush}" Margin="0,-1">
+    shell:SystemTray.IsVisible="False"
+    DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <phone:PhoneApplicationPage.Resources>
+		<Style TargetType="local:PathControl">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="local:PathControl">
+						<Grid>
+							<Path Data="{TemplateBinding Content}" Fill="{TemplateBinding Foreground}" Stretch="Uniform"/>
+						</Grid>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+
+        <Style x:Key="TabListBoxItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="24,12"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="LayoutRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalAlignment}" VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver"/>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="SelectionStates">
+                                    <VisualState x:Name="Unselected">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="{StaticResource AppTransparentLightColor}" Storyboard.TargetProperty="(Control.Background).(SolidColorBrush.Color)" Storyboard.TargetName="ContentContainer" d:IsOptimized="True"/>
+                                            <ColorAnimation Duration="0" To="{StaticResource AppTransparentLightColor}" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="ContentContainer" d:IsOptimized="True"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="{TemplateBinding Foreground}" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="ContentContainer" d:IsOptimized="True"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="SelectedUnfocused">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="{TemplateBinding Foreground}" Storyboard.TargetProperty="(Control.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="ContentContainer" d:IsOptimized="True"/>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentControl x:Name="ContentContainer" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Background="Black" BorderBrush="Black"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Margin="0,-1">
+		<Grid.Background>
+			<SolidColorBrush Color="{StaticResource AppBackgroundColor}"/>
+		</Grid.Background>
 		<VisualStateManager.VisualStateGroups>
 			<VisualStateGroup x:Name="FeedContentStates">
 				<VisualState x:Name="EmptyFeed">
@@ -140,10 +200,10 @@
 				</VisualState>
 			</VisualStateGroup>
 		</VisualStateManager.VisualStateGroups>
-		
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto"/>
-			<RowDefinition Height="*"/>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
 		<StackPanel Background="{StaticResource AppMainBrush}" DataContext="{Binding LoggedUser, Source={StaticResource UserController}}" Tap="UserProfileClick" VerticalAlignment="Top" Grid.Row="0" Visibility="Collapsed">
@@ -168,19 +228,29 @@
 				</StackPanel>
 			</StackPanel>
 		</StackPanel>
-		<Grid Background="#60000000" Grid.Row="0" >
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-				<ColumnDefinition/>
-			</Grid.ColumnDefinitions>
-			<Path Grid.Column="0" Stretch="Uniform" Data="F1 M 24.0033,56.0078L 24.0033,38.0053L 22.0031,40.0056L 19.0027,35.0049L 38.0053,20.0028L 57.008,35.0049L 54.0075,40.0056L 52.0073,38.0053L 52.0073,56.0078L 24.0033,56.0078 Z M 38.0053,26.9204L 27.0038,36.005L 27.0038,53.0074L 49.0068,53.0074L 49.0068,36.005L 38.0053,26.9204 Z " Fill="{StaticResource AppMainBrush}" MaxHeight="40" MaxWidth="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12,24"/>
-			<Path Data="M2.82353,7.059 L24.4706,7.059 L24.4706,9.88253 L24.2471,9.88253 L24.2471,10.6824 L6.36471,10.6824 C4.88329,10.6824 3.68235,11.8833 3.68235,13.3647 L3.68235,40.6353 C3.68235,42.1167 4.88329,43.3177 6.36471,43.3177 L33.6353,43.3177 C35.1167,43.3177 36.3177,42.1167 36.3177,40.6353 L36.3177,23.2 L37.1765,23.2 L37.1765,23.059 L40,23.059 L40,44.2355 C40,45.7949 38.7359,47.059 37.1765,47.059 L2.82353,47.059 C1.26414,47.059 0,45.7949 0,44.2355 L0,9.88253 C0,8.32314 1.26414,7.059 2.82353,7.059 z M38,4 C34.6863,4 32,6.68628 32,10 C32,13.3137 34.6863,16 38,16 C41.3137,16 44,13.3137 44,10 C44,6.68628 41.3137,4 38,4 z M38.1175,0 C43.5754,0 48,4.42455 48,9.8825 C48,15.3404 43.5754,19.765 38.1175,19.765 C32.6595,19.765 28.235,15.3404 28.235,9.8825 C28.235,4.42455 32.6595,0 38.1175,0 z" Fill="{StaticResource AppForegroundBrush}" MaxWidth="40" MaxHeight="40" Stretch="Fill" UseLayoutRounding="False" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12,24"/>
-			<Path Grid.Column="2" Stretch="Uniform" Data="F1 M 52.2573,19.0027L 38.0053,33.2546L 50.6737,33.2546L 25.3369,57.008L 35.4716,38.0053L 23.7533,38.0053L 36.4217,19.0027L 52.2573,19.0027 Z " Fill="{StaticResource AppForegroundBrush}" MaxHeight="40" MaxWidth="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12,24"/>
-			<Path Grid.Column="3" Stretch="Uniform" Data="F1 M 38,17.4167C 33.6278,17.4167 30.0833,20.9611 30.0833,25.3333C 30.0833,29.7056 33.6278,33.25 38,33.25C 42.3723,33.25 45.9167,29.7056 45.9167,25.3333C 45.9167,20.9611 42.3722,17.4167 38,17.4167 Z M 30.0833,44.3333L 29.4774,58.036C 32.2927,59.4011 35.4528,60.1667 38.7917,60.1667C 41.5308,60.1667 44.1496,59.6515 46.5564,58.7126L 45.9167,44.3333C 46.9722,44.8611 49.0834,49.0833 49.0834,49.0833C 49.0834,49.0833 50.1389,50.6667 50.6667,57L 55.4166,55.4167L 53.8333,47.5C 53.8333,47.5 50.6667,36.4167 44.3332,36.4168L 31.6666,36.4168C 25.3333,36.4167 22.1667,47.5 22.1667,47.5L 20.5833,55.4166L 25.3333,56.9999C 25.8611,50.6666 26.9167,49.0832 26.9167,49.0832C 26.9167,49.0832 29.0278,44.8611 30.0833,44.3333 Z " Fill="{StaticResource AppForegroundBrush}" MaxHeight="40" MaxWidth="40" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="12,24"/>
-		</Grid>
-		<phone:Pivot x:Name="MainPivot" Foreground="{StaticResource AppMainBrush}" Background="{StaticResource AppBackgroundBrush}" Grid.Row="1">
+
+        <ListBox x:Name="TabMenu" Grid.Row="0" Height="100" Background="{StaticResource AppMainBrush}" Foreground="White" SelectedIndex="{Binding SelectedIndex, ElementName=MainPivot, Mode=TwoWay}" ItemContainerStyle="{StaticResource TabListBoxItemStyle}" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+			<ListBox.ItemsPanel>
+				<ItemsPanelTemplate>
+                    <local:SplitPanel/>
+				</ItemsPanelTemplate>
+			</ListBox.ItemsPanel>
+
+            <ListBoxItem>
+                <local:PathControl MaxWidth="40" MaxHeight="40" Content="M38.625,17.5 L35,13.8775 L35,5 C35,3.625 33.875,2.5 32.5,2.5 L30,2.5 C28.625,2.5 27.5,3.625 27.5,5 L27.5,6.3825 L22.5,1.3875 C21.8175,0.7425 21.1925,0 20,0 C18.8075,0 18.1825,0.7425 17.5,1.3875 L1.375,17.5 C0.595,18.3125 0,18.905 0,20 C0,21.4075 1.08,22.5 2.5,22.5 L5,22.5 L5,37.5 C5,38.875 6.125,40 7.5,40 L15,40 L15,27.5 C15,26.125 16.125,25 17.5,25 L22.5,25 C23.875,25 25,26.125 25,27.5 L25,40 L32.5,40 C33.875,40 35,38.875 35,37.5 L35,22.5 L37.5,22.5 C38.92,22.5 40,21.4075 40,20 C40,18.905 39.405,18.3125 38.625,17.5 z"/>
+            </ListBoxItem>
+            <ListBoxItem>
+                <local:PathControl MaxWidth="40" MaxHeight="40" Content="M37.1429,22.5 C36.1029,22.4475 34.8657,20.9375 34.2857,17.5 L34.2857,15 C34.2857,9.77 30.6086,5.295 25.4,3.43 C24.6429,1.4425 22.5257,0 20,0 C17.4743,0 15.3571,1.4425 14.6,3.43 C9.39143,5.295 5.71429,9.77 5.71429,15 L5.71429,17.5 C5.13429,20.9375 3.89714,22.4475 2.85714,22.5 C1.24857,22.5775 0,23.595 0,25 C0,26.1725 0.714286,26.72 1.74,27.5 C4.53714,29.625 10.6914,32.5 20,32.5 C29.3086,32.5 35.4629,29.625 38.26,27.5 C39.2857,26.72 40,26.1725 40,25 C40,23.595 38.7514,22.5775 37.1429,22.5 z M13.1686,37.0175 C14.7343,38.825 17.2057,40 20,40 C22.7943,40 25.2657,38.825 26.8314,37.0175 C24.76,37.3175 22.4886,37.5 20,37.5 C17.5114,37.5 15.24,37.3175 13.1686,37.0175"/>
+            </ListBoxItem>
+            <ListBoxItem>
+                <local:PathControl MaxWidth="40" MaxHeight="40" Content="M8,6 C8,7.104 7.104,8 6,8 C6,9.104 6.896,10 8,10 C9.104,10 10,9.104 10,8 C10,6.896 9.104,6 8,6 z M8,2 C3.898,2 0,6.648 0,8 C0,9.352 3.898,14 8,14 C12.102,14 16,9.352 16,8 C16,6.648 12.102,2 8,2 z M8,12 C5.791,12 4,10.209 4,8 C4,5.791 5.791,4 8,4 C10.209,4 12,5.791 12,8 C12,10.209 10.209,12 8,12 z"/>
+            </ListBoxItem>
+            <ListBoxItem>
+                <local:PathControl MaxWidth="40" MaxHeight="40" Content="M18.79,20.235 C19.22,19.0225 22.5,14.845 22.5,7.5 C22.5,3.3575 19.1425,0 15,0 C10.8575,0 7.5,3.3575 7.5,7.5 C7.5,14.845 10.7825,19.0225 11.21,20.235 C7.3825,20.585 0,23.0275 0,27.5 C0,28.555 0.84,30 2.5,30 L27.5,30 C29.16,30 30,28.555 30,27.5 C30,23.0275 22.6175,20.585 18.79,20.235 z"/>
+            </ListBoxItem>
+        </ListBox>
+
+		<phone:Pivot x:Name="MainPivot" Foreground="{StaticResource AppMainBrush}" Background="{x:Null}" Grid.Row="1">
 
 			<!--<phone:PivotItem tag="discover" Header="{Binding LocalizedResources.Discover, Source={StaticResource LocalizedStrings}}" Margin="0">
             </phone:PivotItem>--><!--<phone:PivotItem Tag="profile" Header="{Binding LocalizedResources.Profile, Source={StaticResource LocalizedStrings}}" Margin="0">
@@ -201,11 +271,11 @@
 				<Grid>
 
 					<ProgressBar x:Name="FeedProgressBar" VerticalAlignment="Top" Margin="0,12,0,0" IsIndeterminate="True" Visibility="Collapsed" Foreground="{StaticResource AppForegroundBrush}"/>
-					<ListBox x:Name="FeedContent" ItemTemplate="{StaticResource FeedTemplate}" d:DataContext="{d:DesignData /SampleData/FeedSampleData.xaml}" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" SelectionChanged="DisableSelectionChanged" Padding="0,12,0,0"/>
+					<ListBox x:Name="FeedContent" ItemTemplate="{StaticResource FeedTemplate}" d:DataContext="{d:DesignData /SampleData/FeedSampleData.xaml}" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" SelectionChanged="DisableSelectionChanged" Padding="0,12,0,0" />
 
-					<StackPanel x:Name="EmptyFeedMessage" Orientation="Vertical" Visibility="Collapsed" Margin="12,24">
-                        <TextBlock Text="{Binding LocalizedResources.EmptyFeedMessage, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" TextAlignment="Center" FontSize="29.333" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,12" FontWeight="Light"/>
-                        <local:MyButton Content="{Binding LocalizedResources.AddSomeFriends, Source={StaticResource LocalizedStrings}}" Click="appBarSearchClick" Background="{StaticResource AppFlatGreenBrush}" Foreground="{StaticResource AppForegroundBrush}"/>
+					<StackPanel x:Name="EmptyFeedMessage" Orientation="Vertical" Visibility="Collapsed" Margin="12,24" HorizontalAlignment="Center" VerticalAlignment="Center">
+						<TextBlock Text="{Binding LocalizedResources.EmptyFeedMessage, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" TextAlignment="Center" FontSize="29.333" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,12" FontWeight="Light" Foreground="{StaticResource AppForegroundBrush}"/>
+						<local:MyButton Content="{Binding LocalizedResources.AddSomeFriends, Source={StaticResource LocalizedStrings}}" Click="appBarSearchClick" Background="{StaticResource AppFlatGreenBrush}" Foreground="White"/>
 					</StackPanel>
 				</Grid>
 			</phone:PivotItem>
@@ -214,11 +284,15 @@
 				<Grid>
 
 					<ProgressBar x:Name="NotificationsProgressBar" VerticalAlignment="Top" Margin="0,12,0,0" IsIndeterminate="True" Visibility="Collapsed" Foreground="{StaticResource AppForegroundBrush}"/>
-					<ListBox x:Name="NotificationsContent" ItemTemplate="{StaticResource NotificationsTemplate}" d:DataContext="{d:DesignData /SampleData/ChallengeCollectionSampleData.xaml}" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" SelectionChanged="DisableSelectionChanged" Padding="0,12,0,9" Visibility="Collapsed"/>
+					<ListBox x:Name="NotificationsContent" ItemTemplate="{StaticResource NotificationsTemplate}" d:DataContext="{d:DesignData /SampleData/ChallengeCollectionSampleData.xaml}" ItemsSource="{Binding}" HorizontalContentAlignment="Stretch" SelectionChanged="DisableSelectionChanged" Padding="0,12,0,9"/>
 
-					<StackPanel x:Name="EmptyNotificationsMessage" Orientation="Vertical" Visibility="Collapsed" Margin="12,24">
-                        <TextBlock Text="{Binding LocalizedResources.EmptyNotificationsMessage, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" TextAlignment="Center" FontSize="29.333" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,12" FontWeight="Light"/>
-                        <local:MyButton Content="{Binding LocalizedResources.ChallengeAFriend, Source={StaticResource LocalizedStrings}}" Click="appBarNewChallengeClick" Background="{StaticResource AppFlatGreenBrush}" Foreground="{StaticResource AppForegroundBrush}"/>
+					<StackPanel x:Name="EmptyNotificationsMessage" Orientation="Vertical" Visibility="Collapsed" Margin="12,24" VerticalAlignment="Center" HorizontalAlignment="Center">
+						<TextBlock Text="{Binding LocalizedResources.EmptyNotificationsMessage, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" TextAlignment="Center" FontSize="29.333" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,12" FontWeight="Light" Foreground="{StaticResource AppForegroundBrush}"/>
+						<local:MyButton Content="{Binding LocalizedResources.ChallengeAFriend, Source={StaticResource LocalizedStrings}}" Click="appBarNewChallengeClick" Background="{StaticResource AppFlatGreenBrush}">
+							<local:MyButton.Foreground>
+								<SolidColorBrush Color="White"/>
+							</local:MyButton.Foreground>
+						</local:MyButton>
 					</StackPanel>
 				</Grid>
 			</phone:PivotItem>

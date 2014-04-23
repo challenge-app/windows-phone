@@ -49,7 +49,7 @@ namespace ChallengeApp.Views.Private
             ApplicationBar = new ApplicationBar();
 
             // Appearence
-            ApplicationBar.BackgroundColor = (Color)App.Current.Resources["AppBarBackgroundColor"];
+            ApplicationBar.BackgroundColor = (Color)App.Current.Resources["AppDiscretBackgroundColor"];
             ApplicationBar.ForegroundColor = (Color)App.Current.Resources["AppBarForegroundColor"];
 
             // Create a new button and set the text value to the localized string from AppResources.

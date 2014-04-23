@@ -11,9 +11,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource AppForegroundBrush}" 
-    shell:SystemTray.IsVisible="True"
-    shell:SystemTray.BackgroundColor="{StaticResource AppSystemTrayBackgroundColor}"
-    shell:SystemTray.ForegroundColor="{StaticResource AppSystemTrayForegroundColor}"
+    shell:SystemTray.IsVisible="False"
     mc:Ignorable="d"
     DataContext="{Binding RelativeSource={RelativeSource Self}}">
 

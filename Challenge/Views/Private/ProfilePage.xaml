@@ -13,9 +13,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Background="{StaticResource AppBackgroundBrush}" 
     Foreground="{StaticResource AppForegroundBrush}" 
-    shell:SystemTray.IsVisible="True"
-    shell:SystemTray.Opacity="0" 
-    shell:SystemTray.ForegroundColor="LightGray"
+    shell:SystemTray.IsVisible="False"
     DataContext="{Binding RelativeSource={RelativeSource Self}}">
 
     <!--LayoutRoot is the root grid where all page content is placed-->

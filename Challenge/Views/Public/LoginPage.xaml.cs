@@ -69,7 +69,7 @@ namespace ChallengeApp {
             // Appearence
             //ApplicationBar.Mode = ApplicationBarMode.Minimized;
             ApplicationBar.BackgroundColor = (Color)App.Current.Resources["AppMainColor"];
-            ApplicationBar.ForegroundColor = (Color)App.Current.Resources["AppForegroundColor"];
+            ApplicationBar.ForegroundColor = Colors.White;
 
             appBarButton = new ApplicationBarIconButton(new Uri("/Assets/Icons/check.png", UriKind.Relative));
             updateAppBarButton();

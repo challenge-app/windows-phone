@@ -30,8 +30,9 @@ namespace ChallengeApp
 
         void MyButton_Loaded(object sender, RoutedEventArgs e)
         {
-            if (PressedBackgroundBrush == null) PressedBackgroundBrush = this.Background;
-            if (PressedForegroundBrush == null) PressedForegroundBrush = this.Foreground;
+            if (this.Foreground == null) 		this.Foreground 		= new SolidColorBrush(Colors.White);
+            if (PressedBackgroundBrush == null) PressedBackgroundBrush 	= this.Background;
+            if (PressedForegroundBrush == null) PressedForegroundBrush 	= this.Foreground;
         }
     }
 }
